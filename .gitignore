@@ -1,0 +1,14 @@
+.vscode/settings.json
+.ipynb_checkpoints
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Mathematica
+/testing.nb
+*.mx
+*.paclet
+SymbolicAnisotropyUsage.nb
+
+# Mac stuff
+.DS_Store
