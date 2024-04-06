@@ -6,13 +6,26 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saReflectionTransformation,
      "saReflectionTransformation[vec$] returns a rank-8 tensor derived from 4 copies of a reflection transform along three dimensional vector vec$"
     ];
 
-saRotationTransformation::usage = "saRotationTransformation[vec] returns a rank-8 tensor derived from 4 copies of a rotation transform (Euler transform) around three dimensional vector vec";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saRotationTransformation,
+     "saRotationTransformation[ang$, vec$] returns a rank-8 tensor derived from 4 copies of a rotation transform of angle ang$ around three dimensional vector vec$"
+    ];
 
-saCreateElasticityTensor::usage = "CreateElasticityTensor[head] creates a symbolic rank-4 elastic tensor with components of head 'head'. It takes an option 'Symmetry' with possible values 'Monoclinic', 'Orthotropic', 'Transverse Isotropic', 'Isotropic'";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saCreateElasticityTensor,
+     "saCreateElasticityTensor[head$] returns a rank-4 elastic tensor with 21 independent components of the form head$[i, j, k, l].
+saCreateElasticityTensor[head$, 'Symmetry'->$$] returns a rank-4 elastic tensor with additional symmetries as follows:
+| Name | 'Monoclinic' | 'Orthotropic' | 'Transverse Isotropic' | 'Isotropic' |
+| Independent Components | 13 | 9 | 5 | 2 |
+| Symmetry type | Reflection | Reflection | Rotation | Rotation|
+| Symmetry axis | {0,0,1} | {0,0,1} and {1,0,0} | {0,0,1} | {0,0,1} and{1,0,0} |
+"
+    ];
 
 saCreateElasticityTensor::unknownSymmetry = "`1` is not one of known symmetry specifications: `2`.";
 
-saContract::usage = "saContract[]";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saContract, "saContract[symmetry$, tensor$] provides the contraction of a rank-8 symmetry tensor, with a rank-4 elastic tensor.
+saContract[saRotationTransformation[\[Theta], {1,0,0}], saCreateElasticityTensor[c, 'Symmetry'->'Transverse Isotropic']] tilts the symmetry plane of a VTI elastic tensor by \[Theta]
+"
+    ];
 
 saTensor2Voigt::usage = "saTensor2Voigt[head] ...";
 
@@ -46,12 +59,12 @@ saRotationTransformation[\[Theta]_, v_] :=
         r \[TensorProduct] r \[TensorProduct] r \[TensorProduct] r
     ]
 
-saContract[tensor_, symmetry_] :=
+saContract[symmetry_, tensor_] :=
     TensorContract[symmetry \[TensorProduct] tensor, {{2, 9}, {4, 10},
          {6, 11}, {8, 12}}]
 
 symmetrize[tens_, symm_] :=
-    tens /. First @ Quiet[Solve[tens == saContract[tens, symm], DeleteDuplicates
+    tens /. First @ Quiet[Solve[tens == saContract[symm, tens], DeleteDuplicates
          @ Cases[Flatten @ tens, _dummy]], Solve::svars]
 
 symmetric @ "Generic" = Array[dummy, {3, 3, 3, 3}] /. dummy[a_, b_, d_,
@@ -94,14 +107,32 @@ saBondMatrix[a_] :=
                     {
                         {
                             mat^2(*upper left hand block - square of 3x3 matrix
-                                *), 2 RotateLeft /@ mat RotateRight /@ mat(*upper right hand block - 2x product of complementary rows
+                                
+                                
+                                
+                                
+                                *),
+                            2 RotateLeft /@ mat RotateRight /@ mat(*upper right hand block - 2x product of complementary rows
+                                
+                                
+                                
+                                
                                 *)
                         }
                         ,
                         {
-                            RotateLeft @ mat RotateRight @ mat(*lower left hand block - product of complementary columns
-                                *), Array[Plus @@ Times @@@ Apply[symbol, strangeDet[##], {2}]&, {3, 
-                                3}](*lower right hand block - weird vector product of submatrices*)
+                            RotateLeft @ mat RotateRight @ mat (*lower left hand block - product of complementary columns
+                                
+                                
+                                
+                                
+                                *) ,
+                            Array[Plus @@ Times @@@ Apply[symbol, strangeDet[
+                                ##], {2}]&, {3, 3}](*lower right hand block - weird vector product of submatrices
+                                
+                                
+                                
+                                *)
                         }
                     }
                 ]
