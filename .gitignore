@@ -8,7 +8,7 @@ __pycache__/
 /testing.nb
 *.mx
 *.paclet
-SymbolicAnisotropyUsage.nb
+scratch.nb
 
 # Mac stuff
 .DS_Store
