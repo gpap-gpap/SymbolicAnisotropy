@@ -11,7 +11,7 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saRotationTransformation,
     ];
 
 GeneralUtilities`SetUsage[SymbolicAnisotropy`saCreateElasticityTensor,
-     "saCreateElasticityTensor[head$] returns a rank-4 elastic tensor with 21 independent components of the form head$[i, j, k, l].
+     "saCreateElasticityTensor[head$] returns a rank-4 symbolic elastic tensor with 21 independent components of head$(ijkl) in the form head$[i, j, k, l].
 saCreateElasticityTensor[head$, 'Symmetry'->$$] returns a rank-4 elastic tensor with additional symmetries as follows:
 | Name | 'Monoclinic' | 'Orthotropic' | 'Transverse Isotropic' | 'Isotropic' |
 | Independent Components | 13 | 9 | 5 | 2 |
@@ -23,23 +23,46 @@ saCreateElasticityTensor[head$, 'Symmetry'->$$] returns a rank-4 elastic tensor 
 saCreateElasticityTensor::unknownSymmetry = "`1` is not one of known symmetry specifications: `2`.";
 
 GeneralUtilities`SetUsage[SymbolicAnisotropy`saContract, "saContract[symmetry$, tensor$] provides the contraction of a rank-8 symmetry tensor, with a rank-4 elastic tensor.
-saContract[saRotationTransformation[\[Theta], {1,0,0}], saCreateElasticityTensor[c, 'Symmetry'->'Transverse Isotropic']] tilts the symmetry plane of a VTI elastic tensor by \[Theta]
+This is shorthand for contracting indices when applying rotation or reflection transforms of the form R$(im)R$(jn)R$(ko)R$(lp)c$(mnop)
+For example saContract[saRotationTransformation[\[Theta], {1,0,0}], saCreateElasticityTensor[c, 'Symmetry'->'Transverse Isotropic']] tilts the symmetry plane of a VTI elastic tensor by \[Theta] along the x-axis.
 "
     ];
 
-saTensor2Voigt::usage = "saTensor2Voigt[head] ...";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saTensor2Voigt, "saTensor2Voigt[head$, tensor$] converts a rank-4 symbolic elastic tensor$ with entries head$[i,j,k,l] to the corresponding Voigt 6x6 matrix with entries head$[i,j]"
+    ]
 
-saVoigt2Tensor::usage = "saVoigt2Tensor[head] ...";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saVoigt2Tensor, "aVoigt2Tensor[head$, matrix$] converts a symbolic Voigt 6x6 matrix with entries head$[i,j] to the corresponding rank-4 elastic tensor$ with entries head$[i,j,k,l]"
+    ]
 
-saVoigtReplacementRule::usage = "";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saVoigtReplacementRule,"saVoigtReplacementRule[head$] is a replacement rule for tensor indices to matrix indices for elements with head$[i,j,k,l].
+There is no tensor-to-matrix reshaping taking place by the replacement rule, just relabelling of indices.
+For instance c[1,2,1,2]/.saVoigtReplacementRule[c] returns c[6,6]
+"
+    ]
 
-saTensorReplacementRule::usage = "";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saTensorReplacementRule,
+     "saTensorReplacementRule[head$] is a replacement rule for matrix indices to tensor indices for elements with head$[i,j].
+There is no matrix-to-tensor reshaping taking place by the replacement rule, just relabelling of indices.
+For instance c[6,6]/.saTensorReplacementRule[c] returns c[1,2,1,2]
+"
+    ]
 
-saBondMatrix::usage = "saBondMatrix[head] ...";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saBondMatrix,"saBondMatrix[head$] creates a 6x6 Bond matrix with entries of head$[i,j]
+"
+    ]
 
-saHumanReadable::usage = "saHumanReadable[head] ...";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saHumanReadable,"saHumanReadable[head$] creates a rule to convert all matrix/tensor entries head$[i,j] or head$[i,j,k,l] to headij$ or headijkl$ respectively for ease of readability.
+"
+    ]
 
-saChristoffelMatrix::usage = "saChristoffelEquation[head] ...";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saChristoffelMatrix,"saChristoffelMatrix[tensor$, vector$] contracts a rank-4 elastic tensor with a 3-vector vector$. 
+For example Eigenvalues[saChristoffelMatrix[saCreateElasticityTensor[c, 'Symmetry'->'Isotropic'], {0,0,1}]-\[Rho] V^2 IdentityMatrix[3]] gives the equations for Vp, and Vs for an isotropic matrix
+"
+    ]
+
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saVariables,"saVariables[head$, expr$] returns the independent terms of $head in expression $expr. 
+"
+    ]
 
 saPhaseVelocity::usage = "saPhaseVelocity[head] ...";
 
@@ -111,8 +134,12 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
+                                
                                 *),
                             2 RotateLeft /@ mat RotateRight /@ mat(*upper right hand block - 2x product of complementary rows
+                                
+                                
                                 
                                 
                                 
@@ -126,9 +153,13 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
+                                
                                 *) ,
                             Array[Plus @@ Times @@@ Apply[symbol, strangeDet[
                                 ##], {2}]&, {3, 3}](*lower right hand block - weird vector product of submatrices
+                                
+                                
                                 
                                 
                                 
@@ -168,14 +199,17 @@ saVoigt2Tensor[symbol_, matrix_] /; Dimensions[matrix] === {6, 6} :=
             ]
     ];
 
-saHumanReadable[head_, expression_] :=
-    expression /. head[a__] :> ToExpression[(ToString[head] <> (ToString
-         /@ {a}))];
+saHumanReadable[head_] :=
+    head[a__] :> ToExpression[(ToString[head] <> (ToString /@ {a}))];
 
 saChristoffelMatrix[c_, n_] /; Dimensions[c] === {3, 3, 3, 3} && Dimensions[
     n] === {3} :=
     TensorContract[c \[TensorProduct] n \[TensorProduct] n, {{2, 5}, 
         {4, 6}}];
+
+saVariables[c_, expr_] :=
+    Cases[expr // Variables, a_ /; First[Characters[ToString[a]]] ===
+         ToString @ c]
 
 End[];
 
