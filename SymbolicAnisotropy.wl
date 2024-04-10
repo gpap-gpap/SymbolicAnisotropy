@@ -11,12 +11,12 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saRotationTransformation,
     ];
 
 GeneralUtilities`SetUsage[SymbolicAnisotropy`saCreateElasticityTensor,
-     "saCreateElasticityTensor[head$] returns a rank-4 symbolic elastic tensor with 21 independent components of head$(ijkl) in the form head$[i, j, k, l].
+     "saCreateElasticityTensor[head$] returns a rank-4 symbolic elastic tensor with triclinic symmetry and 21 independent components head$(ijkl) in the form head$[i, j, k, l].
 saCreateElasticityTensor[head$, 'Symmetry'->$$] returns a rank-4 elastic tensor with additional symmetries as follows:
-| Name | 'Monoclinic' | 'Orthotropic' | 'Transverse Isotropic' | 'Isotropic' |
-| Independent Components | 13 | 9 | 5 | 2 |
-| Symmetry type | Reflection | Reflection | Rotation | Rotation|
-| Symmetry axis | {0,0,1} | {0,0,1} and {1,0,0} | {0,0,1} | {0,0,1} and{1,0,0} |
+| 'Symmetry' | 'Triclinic' |  'Monoclinic' | 'Orthotropic' | 'Transverse Isotropic' | 'Isotropic' |
+| Independent Components |  21 | 13 | 9 | 5 | 2 |
+| Symmetry type |  None | Reflection | Reflection | Rotation | Rotation |
+| Symmetry axis |  None | {0,0,1} | {0,0,1} and {1,0,0} | {0,0,1} | {0,0,1} and{1,0,0} |
 "
     ];
 
@@ -64,6 +64,8 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saVariables,"saVariables[head$, exp
 "
     ]
 
+saPlaneWave::usage = "saPlaneWave ...";
+
 saPhaseVelocity::usage = "saPhaseVelocity[head] ...";
 
 saGroupVelocity::usage = "saGroupVelocity[head] ...";
@@ -90,12 +92,12 @@ symmetrize[tens_, symm_] :=
     tens /. First @ Quiet[Solve[tens == saContract[symm, tens], DeleteDuplicates
          @ Cases[Flatten @ tens, _dummy]], Solve::svars]
 
-symmetric @ "Generic" = Array[dummy, {3, 3, 3, 3}] /. dummy[a_, b_, d_,
-     e_] /; d > e :> dummy[a, b, e, d] /. dummy[a_, b_, d_, e_] /; a > b :>
-     dummy[b, a, d, e] /. dummy[a_, b_, d_, e_] /; ((a > d && b >= e) || 
-    (a >= d && b > e) || (a > d && b < e)) :> dummy[d, e, a, b];
+symmetric @ "Triclinic" = Array[dummy, {3, 3, 3, 3}] /. dummy[a_, b_,
+     d_, e_] /; d > e :> dummy[a, b, e, d] /. dummy[a_, b_, d_, e_] /; a >
+     b :> dummy[b, a, d, e] /. dummy[a_, b_, d_, e_] /; ((a > d && b >= e
+    ) || (a >= d && b > e) || (a > d && b < e)) :> dummy[d, e, a, b];
 
-symmetric @ "Monoclinic" = symmetrize[symmetric @ "Generic", saReflectionTransformation
+symmetric @ "Monoclinic" = symmetrize[symmetric @ "Triclinic", saReflectionTransformation
      @ {0, 0, 1}];
 
 symmetric @ "Orthotropic" = symmetrize[symmetric @ "Monoclinic", saReflectionTransformation
@@ -114,7 +116,7 @@ symmetric @ sym_ :=
         $Failed
     )
 
-Options[saCreateElasticityTensor] = {"Symmetry" -> "Generic"};
+Options[saCreateElasticityTensor] = {"Symmetry" -> "Triclinic"};
 
 saCreateElasticityTensor[head_, OptionsPattern[]] :=
     symmetric @ OptionValue @ "Symmetry" /. dummy -> head
@@ -136,8 +138,10 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
                                 *),
                             2 RotateLeft /@ mat RotateRight /@ mat(*upper right hand block - 2x product of complementary rows
+                                
                                 
                                 
                                 
@@ -155,9 +159,11 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
                                 *) ,
                             Array[Plus @@ Times @@@ Apply[symbol, strangeDet[
                                 ##], {2}]&, {3, 3}](*lower right hand block - weird vector product of submatrices
+                                
                                 
                                 
                                 
@@ -210,6 +216,10 @@ saChristoffelMatrix[c_, n_] /; Dimensions[c] === {3, 3, 3, 3} && Dimensions[
 saVariables[c_, expr_] :=
     Cases[expr // Variables, a_ /; First[Characters[ToString[a]]] ===
          ToString @ c]
+
+saPlaneWave[A_, k_, \[Omega]_] /; (Dimensions[A] === {3} && Dimensions[
+    k] === {3}) :=
+    A Exp[I (k . #1 - \[Omega] #2)]&;
 
 End[];
 
