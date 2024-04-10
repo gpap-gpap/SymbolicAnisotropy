@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    153519,       3722]
-NotebookOptionsPosition[    147391,       3607]
-NotebookOutlinePosition[    147788,       3623]
-CellTagsIndexPosition[    147745,       3620]
+NotebookDataLength[    167196,       4051]
+NotebookOptionsPosition[    160837,       3932]
+NotebookOutlinePosition[    161234,       3948]
+CellTagsIndexPosition[    161191,       3945]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -46,7 +46,7 @@ SymbolicAnisotropy.wl\>\""}]], "Input",
   3.920999423651359*^9, 3.920999429133904*^9}, {3.9211659579461527`*^9, 
   3.921165959569579*^9}, {3.92139771804707*^9, 3.9213977185995092`*^9}},
  CellLabel->
-  "In[613]:=",ExpressionUUID->"d1537a4b-7150-422e-ab43-1a820a56bf63"]
+  "In[718]:=",ExpressionUUID->"d1537a4b-7150-422e-ab43-1a820a56bf63"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -64,7 +64,7 @@ Cell[BoxData[
   3.921165275145767*^9, 3.921165276053512*^9}, {3.921396410930637*^9, 
   3.921396430112761*^9}},
  CellLabel->
-  "In[612]:=",ExpressionUUID->"ee9d64bb-50da-4428-bceb-76e217c8bd08"],
+  "In[715]:=",ExpressionUUID->"ee9d64bb-50da-4428-bceb-76e217c8bd08"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -91,25 +91,30 @@ Cell[BoxData[
            PaneBox[
             
             StyleBox["\<\"saCreateElasticityTensor[\\!\\(\\*StyleBox[\\\"head\
-\\\", \\\"TI\\\"]\\)] returns a rank-4 symbolic elastic tensor with 21 \
-independent components of \\!\\(\\*StyleBox[SubscriptBox[\\\"head\\\", \
-StyleBox[\\\"i,j,k,l\\\", \\\"TI\\\"]], \\\"TI\\\"]\\) in the form \
-\\!\\(\\*StyleBox[\\\"head\\\", \\\"TI\\\"]\\)[i, j, k, \
+\\\", \\\"TI\\\"]\\)] returns a rank-4 symbolic elastic tensor with triclinic \
+symmetry and 21 independent components \
+\\!\\(\\*StyleBox[SubscriptBox[\\\"head\\\", StyleBox[\\\"ijkl\\\", \
+\\\"TI\\\"]], \\\"TI\\\"]\\) in the form \\!\\(\\*StyleBox[\\\"head\\\", \
+\\\"TI\\\"]\\)[i, j, k, \
 l].\\nsaCreateElasticityTensor[\\!\\(\\*StyleBox[\\\"head\\\", \
 \\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"Symmetry\\\\\\\"\\\", \
 ShowStringCharacters -> True]\\)\[Rule]\\!\\(\\*StyleBox[\\\"\[Ellipsis]\\\", \
 \\\"TR\\\"]\\)] returns a rank-4 elastic tensor with additional symmetries as \
-follows:\\n\\!\\(\\*TagBox[GridBox[{{\\\"\\\\\\\"Name\\\\\\\"\\\", \\\"\\\\\\\
-\"\\\\\\\\\\\\\\\"Monoclinic\\\\\\\\\\\\\\\"\\\\\\\"\\\", \
+follows:\\n\\!\\(\\*TagBox[GridBox[{{\\\"\\\\\\\"\\\\\\\\\\\\\\\"Symmetry\\\\\
+\\\\\\\\\\\"\\\\\\\"\\\", \\\"\\\\\\\"\\\\\\\\\\\\\\\"Triclinic\\\\\\\\\\\\\\\
+\"\\\\\\\"\\\", \
+\\\"\\\\\\\"\\\\\\\\\\\\\\\"Monoclinic\\\\\\\\\\\\\\\"\\\\\\\"\\\", \
 \\\"\\\\\\\"\\\\\\\\\\\\\\\"Orthotropic\\\\\\\\\\\\\\\"\\\\\\\"\\\", \\\"\\\\\
 \\\"\\\\\\\\\\\\\\\"Transverse Isotropic\\\\\\\\\\\\\\\"\\\\\\\"\\\", \
 \\\"\\\\\\\"\\\\\\\\\\\\\\\"Isotropic\\\\\\\\\\\\\\\"\\\\\\\"\\\"}, {\\\"\\\\\
-\\\"Independent Components\\\\\\\"\\\", \\\"\\\\\\\"13\\\\\\\"\\\", \
-\\\"\\\\\\\"9\\\\\\\"\\\", \\\"\\\\\\\"5\\\\\\\"\\\", \\\"\\\\\\\"2\\\\\\\"\\\
-\"}, {\\\"\\\\\\\"Symmetry type\\\\\\\"\\\", \\\"\\\\\\\"Reflection\\\\\\\"\\\
-\", \\\"\\\\\\\"Reflection\\\\\\\"\\\", \\\"\\\\\\\"Rotation\\\\\\\"\\\", \
-\\\"\\\\\\\"Rotation\\\\\\\"\\\"}, {\\\"\\\\\\\"Symmetry axis\\\\\\\"\\\", \\\
-\"\\\\\\\"{0,0,1}\\\\\\\"\\\", \\\"\\\\\\\"{0,0,1} and {1,0,0}\\\\\\\"\\\", \
+\\\"Independent Components\\\\\\\"\\\", \\\"\\\\\\\"21\\\\\\\"\\\", \
+\\\"\\\\\\\"13\\\\\\\"\\\", \\\"\\\\\\\"9\\\\\\\"\\\", \
+\\\"\\\\\\\"5\\\\\\\"\\\", \\\"\\\\\\\"2\\\\\\\"\\\"}, {\\\"\\\\\\\"Symmetry \
+type\\\\\\\"\\\", \\\"\\\\\\\"None\\\\\\\"\\\", \
+\\\"\\\\\\\"Reflection\\\\\\\"\\\", \\\"\\\\\\\"Reflection\\\\\\\"\\\", \
+\\\"\\\\\\\"Rotation\\\\\\\"\\\", \\\"\\\\\\\"Rotation\\\\\\\"\\\"}, \
+{\\\"\\\\\\\"Symmetry axis\\\\\\\"\\\", \\\"\\\\\\\"None\\\\\\\"\\\", \
+\\\"\\\\\\\"{0,0,1}\\\\\\\"\\\", \\\"\\\\\\\"{0,0,1} and {1,0,0}\\\\\\\"\\\", \
 \\\"\\\\\\\"{0,0,1}\\\\\\\"\\\", \\\"\\\\\\\"{0,0,1} \
 and{1,0,0}\\\\\\\"\\\"}}, Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", \
 List[List[Left]]]]], Rule[AutoDelete, False], Rule[GridBoxItemSize, \
@@ -181,7 +186,9 @@ List[List[2]]]]]], \\\"Grid\\\"]\\)\"\>", "InformationUsageText",
                     "\"Options\"",
                     TooltipStyle->"TextStyling"],
                     Annotation[#, "Options", "Tooltip"]& ], 
-                   RowBox[{"\<\"Symmetry\"\>", "\[Rule]", "\<\"Generic\"\>"}]},
+                   
+                   RowBox[{"\<\"Symmetry\"\>", 
+                    "\[Rule]", "\<\"Triclinic\"\>"}]},
                   {
                    TagBox[
                     TooltipBox[
@@ -282,25 +289,30 @@ List[List[2]]]]]], \\\"Grid\\\"]\\)\"\>", "InformationUsageText",
            PaneBox[
             
             StyleBox["\<\"saCreateElasticityTensor[\\!\\(\\*StyleBox[\\\"head\
-\\\", \\\"TI\\\"]\\)] returns a rank-4 symbolic elastic tensor with 21 \
-independent components of \\!\\(\\*StyleBox[SubscriptBox[\\\"head\\\", \
-StyleBox[\\\"i,j,k,l\\\", \\\"TI\\\"]], \\\"TI\\\"]\\) in the form \
-\\!\\(\\*StyleBox[\\\"head\\\", \\\"TI\\\"]\\)[i, j, k, \
+\\\", \\\"TI\\\"]\\)] returns a rank-4 symbolic elastic tensor with triclinic \
+symmetry and 21 independent components \
+\\!\\(\\*StyleBox[SubscriptBox[\\\"head\\\", StyleBox[\\\"ijkl\\\", \
+\\\"TI\\\"]], \\\"TI\\\"]\\) in the form \\!\\(\\*StyleBox[\\\"head\\\", \
+\\\"TI\\\"]\\)[i, j, k, \
 l].\\nsaCreateElasticityTensor[\\!\\(\\*StyleBox[\\\"head\\\", \
 \\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"Symmetry\\\\\\\"\\\", \
 ShowStringCharacters -> True]\\)\[Rule]\\!\\(\\*StyleBox[\\\"\[Ellipsis]\\\", \
 \\\"TR\\\"]\\)] returns a rank-4 elastic tensor with additional symmetries as \
-follows:\\n\\!\\(\\*TagBox[GridBox[{{\\\"\\\\\\\"Name\\\\\\\"\\\", \\\"\\\\\\\
-\"\\\\\\\\\\\\\\\"Monoclinic\\\\\\\\\\\\\\\"\\\\\\\"\\\", \
+follows:\\n\\!\\(\\*TagBox[GridBox[{{\\\"\\\\\\\"\\\\\\\\\\\\\\\"Symmetry\\\\\
+\\\\\\\\\\\"\\\\\\\"\\\", \\\"\\\\\\\"\\\\\\\\\\\\\\\"Triclinic\\\\\\\\\\\\\\\
+\"\\\\\\\"\\\", \
+\\\"\\\\\\\"\\\\\\\\\\\\\\\"Monoclinic\\\\\\\\\\\\\\\"\\\\\\\"\\\", \
 \\\"\\\\\\\"\\\\\\\\\\\\\\\"Orthotropic\\\\\\\\\\\\\\\"\\\\\\\"\\\", \\\"\\\\\
 \\\"\\\\\\\\\\\\\\\"Transverse Isotropic\\\\\\\\\\\\\\\"\\\\\\\"\\\", \
 \\\"\\\\\\\"\\\\\\\\\\\\\\\"Isotropic\\\\\\\\\\\\\\\"\\\\\\\"\\\"}, {\\\"\\\\\
-\\\"Independent Components\\\\\\\"\\\", \\\"\\\\\\\"13\\\\\\\"\\\", \
-\\\"\\\\\\\"9\\\\\\\"\\\", \\\"\\\\\\\"5\\\\\\\"\\\", \\\"\\\\\\\"2\\\\\\\"\\\
-\"}, {\\\"\\\\\\\"Symmetry type\\\\\\\"\\\", \\\"\\\\\\\"Reflection\\\\\\\"\\\
-\", \\\"\\\\\\\"Reflection\\\\\\\"\\\", \\\"\\\\\\\"Rotation\\\\\\\"\\\", \
-\\\"\\\\\\\"Rotation\\\\\\\"\\\"}, {\\\"\\\\\\\"Symmetry axis\\\\\\\"\\\", \\\
-\"\\\\\\\"{0,0,1}\\\\\\\"\\\", \\\"\\\\\\\"{0,0,1} and {1,0,0}\\\\\\\"\\\", \
+\\\"Independent Components\\\\\\\"\\\", \\\"\\\\\\\"21\\\\\\\"\\\", \
+\\\"\\\\\\\"13\\\\\\\"\\\", \\\"\\\\\\\"9\\\\\\\"\\\", \
+\\\"\\\\\\\"5\\\\\\\"\\\", \\\"\\\\\\\"2\\\\\\\"\\\"}, {\\\"\\\\\\\"Symmetry \
+type\\\\\\\"\\\", \\\"\\\\\\\"None\\\\\\\"\\\", \
+\\\"\\\\\\\"Reflection\\\\\\\"\\\", \\\"\\\\\\\"Reflection\\\\\\\"\\\", \
+\\\"\\\\\\\"Rotation\\\\\\\"\\\", \\\"\\\\\\\"Rotation\\\\\\\"\\\"}, \
+{\\\"\\\\\\\"Symmetry axis\\\\\\\"\\\", \\\"\\\\\\\"None\\\\\\\"\\\", \
+\\\"\\\\\\\"{0,0,1}\\\\\\\"\\\", \\\"\\\\\\\"{0,0,1} and {1,0,0}\\\\\\\"\\\", \
 \\\"\\\\\\\"{0,0,1}\\\\\\\"\\\", \\\"\\\\\\\"{0,0,1} \
 and{1,0,0}\\\\\\\"\\\"}}, Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", \
 List[List[Left]]]]], Rule[AutoDelete, False], Rule[GridBoxItemSize, \
@@ -371,24 +383,26 @@ List[List[2]]]]]], \\\"Grid\\\"]\\)\"\>", "InformationUsageText",
   InformationData[<|
    "ObjectType" -> "Symbol", "Usage" -> 
     "saCreateElasticityTensor[\!\(\*StyleBox[\"head\", \"TI\"]\)] returns a \
-rank-4 symbolic elastic tensor with 21 independent components of \
-\!\(\*StyleBox[SubscriptBox[\"head\", StyleBox[\"i,j,k,l\", \"TI\"]], \"TI\"]\
-\) in the form \!\(\*StyleBox[\"head\", \"TI\"]\)[i, j, k, l].\n\
+rank-4 symbolic elastic tensor with triclinic symmetry and 21 independent \
+components \!\(\*StyleBox[SubscriptBox[\"head\", StyleBox[\"ijkl\", \"TI\"]], \
+\"TI\"]\) in the form \!\(\*StyleBox[\"head\", \"TI\"]\)[i, j, k, l].\n\
 saCreateElasticityTensor[\!\(\*StyleBox[\"head\", \"TI\"]\), \
 \!\(\*StyleBox[\"\\\"Symmetry\\\"\", ShowStringCharacters -> True]\)\[Rule]\!\
 \(\*StyleBox[\"\[Ellipsis]\", \"TR\"]\)] returns a rank-4 elastic tensor with \
-additional symmetries as follows:\n\!\(\*TagBox[GridBox[{{\"\\\"Name\\\"\", \
+additional symmetries as follows:\n\
+\!\(\*TagBox[GridBox[{{\"\\\"\\\\\\\"Symmetry\\\\\\\"\\\"\", \
+\"\\\"\\\\\\\"Triclinic\\\\\\\"\\\"\", \
 \"\\\"\\\\\\\"Monoclinic\\\\\\\"\\\"\", \"\\\"\\\\\\\"Orthotropic\\\\\\\"\\\"\
 \", \"\\\"\\\\\\\"Transverse Isotropic\\\\\\\"\\\"\", \"\\\"\\\\\\\"Isotropic\
-\\\\\\\"\\\"\"}, {\"\\\"Independent Components\\\"\", \"\\\"13\\\"\", \"\\\"9\
-\\\"\", \"\\\"5\\\"\", \"\\\"2\\\"\"}, {\"\\\"Symmetry type\\\"\", \
-\"\\\"Reflection\\\"\", \"\\\"Reflection\\\"\", \"\\\"Rotation\\\"\", \
-\"\\\"Rotation\\\"\"}, {\"\\\"Symmetry axis\\\"\", \"\\\"{0,0,1}\\\"\", \
-\"\\\"{0,0,1} and {1,0,0}\\\"\", \"\\\"{0,0,1}\\\"\", \"\\\"{0,0,1} \
-and{1,0,0}\\\"\"}}, Rule[GridBoxAlignment, List[Rule[\"Columns\", \
-List[List[Left]]]]], Rule[AutoDelete, False], Rule[GridBoxItemSize, \
-List[Rule[\"Columns\", List[List[Automatic]]], Rule[BaseStyle, \
-List[Rule[ShowStringCharacters, True]]], Rule[\"Rows\", \
+\\\\\\\"\\\"\"}, {\"\\\"Independent Components\\\"\", \"\\\"21\\\"\", \
+\"\\\"13\\\"\", \"\\\"9\\\"\", \"\\\"5\\\"\", \"\\\"2\\\"\"}, {\"\\\"Symmetry \
+type\\\"\", \"\\\"None\\\"\", \"\\\"Reflection\\\"\", \"\\\"Reflection\\\"\", \
+\"\\\"Rotation\\\"\", \"\\\"Rotation\\\"\"}, {\"\\\"Symmetry axis\\\"\", \"\\\
+\"None\\\"\", \"\\\"{0,0,1}\\\"\", \"\\\"{0,0,1} and {1,0,0}\\\"\", \
+\"\\\"{0,0,1}\\\"\", \"\\\"{0,0,1} and{1,0,0}\\\"\"}}, Rule[GridBoxAlignment, \
+List[Rule[\"Columns\", List[List[Left]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\"Columns\", List[List[Automatic]]], \
+Rule[BaseStyle, List[Rule[ShowStringCharacters, True]]], Rule[\"Rows\", \
 List[List[Automatic]]]]], Rule[GridBoxSpacings, List[Rule[\"Columns\", \
 List[List[2]]]]]], \"Grid\"]\)", "Documentation" -> None, "OwnValues" -> None,
      "UpValues" -> None, "DownValues" -> 
@@ -402,7 +416,7 @@ List[List[2]]]]]], \"Grid\"]\)", "Documentation" -> None, "OwnValues" -> None,
           OptionValue["Symmetry"]], SymbolicAnisotropy`Private`dummy -> 
          SymbolicAnisotropy`Private`head]}], "SubValues" -> None, 
     "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
-    "Options" -> {"Symmetry" -> "Generic"}, "Attributes" -> {}, "FullName" -> 
+    "Options" -> {"Symmetry" -> "Triclinic"}, "Attributes" -> {}, "FullName" -> 
     "SymbolicAnisotropy`saCreateElasticityTensor"|>, False]]], "Output",
  CellChangeTimes->{
   3.921164596598446*^9, 3.9211652764260187`*^9, 3.921165717071513*^9, 
@@ -414,9 +428,11 @@ List[List[2]]]]]], \"Grid\"]\)", "Documentation" -> None, "OwnValues" -> None,
    3.921397150635632*^9, 3.9213971654747353`*^9}, 3.921397492810136*^9, {
    3.921397528157311*^9, 3.921397589158874*^9}, 3.9213976334097147`*^9, {
    3.9213977212511044`*^9, 3.921397851806471*^9}, 3.921398613320758*^9, {
-   3.921406508157672*^9, 3.9214065373476257`*^9}, 3.9216653122529507`*^9},
+   3.921406508157672*^9, 3.9214065373476257`*^9}, 3.9216653122529507`*^9, 
+   3.921766482971393*^9, {3.9217665184007807`*^9, 3.921766602748208*^9}, {
+   3.921767315269451*^9, 3.9217674753018913`*^9}},
  CellLabel->
-  "Out[612]=",ExpressionUUID->"b341f451-489c-4644-8b20-5c934739e2af"]
+  "Out[715]=",ExpressionUUID->"765ac7b0-0172-4f56-9170-a3654ef97c48"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1125,6 +1141,315 @@ rank-4 elastic \!\(\*StyleBox[\"tensor\", \"TI\"]\) with entries \
    3.921409168480734*^9},
  CellLabel->
   "Out[143]=",ExpressionUUID->"4d79b353-1512-4de9-bf50-737811ffec4a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "saPlaneWave"}]], "Input",
+ CellChangeTimes->{{3.921767772717902*^9, 3.921767773355246*^9}},
+ CellLabel->
+  "In[719]:=",ExpressionUUID->"2bfc518e-fafc-488c-ab7d-690e7aa00ae8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"saPlaneWavesa[\\!\\(\\*StyleBox[\\\"A\\\", \\\"TI\\\
+\"]\\), \\!\\(\\*StyleBox[\\\"k\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"w\\\", \\\"TI\\\"]\\)] generates the function \
+\\!\\(\\*StyleBox[SubscriptBox[\\\"A\\\", StyleBox[\\\"i\\\", \\\"TI\\\"]], \
+\\\"TI\\\"]\\) e^(\[ImaginaryI] (\\!\\(\\*StyleBox[SubscriptBox[\\\"k\\\", \
+StyleBox[\\\"i\\\", \\\"TI\\\"]], \\\"TI\\\"]\\) #1 - \\!\\(\\*StyleBox[\\\"w\
+\\\", \\\"TI\\\"]\\) #2))&\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"saPlaneWave", "[", 
+                    
+                    RowBox[{
+                    "SymbolicAnisotropy`Private`A_", ",", 
+                    "SymbolicAnisotropy`Private`k_", ",", 
+                    "SymbolicAnisotropy`Private`\[Omega]_"}], "]"}], "/;", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"Dimensions", "[", "SymbolicAnisotropy`Private`A",
+                     "]"}], "===", 
+                    RowBox[{"{", "3", "}"}]}], "&&", 
+                    RowBox[{
+                    
+                    RowBox[{"Dimensions", "[", "SymbolicAnisotropy`Private`k",
+                     "]"}], "===", 
+                    RowBox[{"{", "3", "}"}]}]}]}], ":=", 
+                    RowBox[{
+                    RowBox[{"SymbolicAnisotropy`Private`A", " ", 
+                    RowBox[{"Exp", "[", 
+                    RowBox[{"\[ImaginaryI]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"SymbolicAnisotropy`Private`k", ".", "#1"}], "-", 
+                    
+                    
+                    RowBox[{"SymbolicAnisotropy`Private`\[Omega]", " ", 
+                    "#2"}]}], ")"}]}], "]"}]}], "&"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"SymbolicAnisotropy`saPlaneWave\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"saPlaneWavesa[\\!\\(\\*StyleBox[\\\"A\\\", \\\"TI\\\
+\"]\\), \\!\\(\\*StyleBox[\\\"k\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"w\\\", \\\"TI\\\"]\\)] generates the function \
+\\!\\(\\*StyleBox[SubscriptBox[\\\"A\\\", StyleBox[\\\"i\\\", \\\"TI\\\"]], \
+\\\"TI\\\"]\\) e^(\[ImaginaryI] (\\!\\(\\*StyleBox[SubscriptBox[\\\"k\\\", \
+StyleBox[\\\"i\\\", \\\"TI\\\"]], \\\"TI\\\"]\\) #1 - \\!\\(\\*StyleBox[\\\"w\
+\\\", \\\"TI\\\"]\\) #2))&\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{13., {2., 11.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{13., {2., 11.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "saPlaneWavesa[\!\(\*StyleBox[\"A\", \"TI\"]\), \!\(\*StyleBox[\"k\", \
+\"TI\"]\), \!\(\*StyleBox[\"w\", \"TI\"]\)] generates the function \
+\!\(\*StyleBox[SubscriptBox[\"A\", StyleBox[\"i\", \"TI\"]], \"TI\"]\) e^(\
+\[ImaginaryI] (\!\(\*StyleBox[SubscriptBox[\"k\", StyleBox[\"i\", \"TI\"]], \
+\"TI\"]\) #1 - \!\(\*StyleBox[\"w\", \"TI\"]\) #2))&", "Documentation" -> 
+    None, "OwnValues" -> None, "UpValues" -> None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, SymbolicAnisotropy`saPlaneWave, {Condition[
+         SymbolicAnisotropy`saPlaneWave[
+          Pattern[SymbolicAnisotropy`Private`A, 
+           Blank[]], 
+          Pattern[SymbolicAnisotropy`Private`k, 
+           Blank[]], 
+          Pattern[SymbolicAnisotropy`Private`\[Omega], 
+           Blank[]]], 
+         And[
+         Dimensions[SymbolicAnisotropy`Private`A] === {3}, 
+          Dimensions[SymbolicAnisotropy`Private`k] === {3}]] :> (
+        SymbolicAnisotropy`Private`A 
+        Exp[I (Dot[SymbolicAnisotropy`Private`k, #] - 
+           SymbolicAnisotropy`Private`\[Omega] #2)]& )}], "SubValues" -> None,
+     "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> None, "Attributes" -> {}, "FullName" -> 
+    "SymbolicAnisotropy`saPlaneWave"|>, False]]], "Output",
+ CellChangeTimes->{3.921767773681075*^9, 3.921767822271077*^9},
+ CellLabel->
+  "Out[719]=",ExpressionUUID->"2a1cebd4-0574-41cc-8d5f-ce1ab67fe54b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3633,96 +3958,100 @@ Cell[CellGroupData[{
 Cell[1741, 53, 160, 3, 84, "Section",ExpressionUUID->"a619bf9b-bb6e-4898-a192-35784e7c09ea"],
 Cell[CellGroupData[{
 Cell[1926, 60, 316, 6, 37, "Input",ExpressionUUID->"ee9d64bb-50da-4428-bceb-76e217c8bd08"],
-Cell[2245, 68, 16770, 350, 255, "Output",ExpressionUUID->"b341f451-489c-4644-8b20-5c934739e2af"]
+Cell[2245, 68, 17509, 366, 285, "Output",ExpressionUUID->"765ac7b0-0172-4f56-9170-a3654ef97c48"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19052, 423, 255, 5, 37, "Input",ExpressionUUID->"52498332-c719-4cb7-813e-69ecde3ddb12"],
-Cell[19310, 430, 14334, 338, 148, "Output",ExpressionUUID->"78da74d0-3345-4164-bedf-b0517e59b014"]
+Cell[19791, 439, 255, 5, 37, "Input",ExpressionUUID->"52498332-c719-4cb7-813e-69ecde3ddb12"],
+Cell[20049, 446, 14334, 338, 148, "Output",ExpressionUUID->"78da74d0-3345-4164-bedf-b0517e59b014"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33681, 773, 208, 4, 37, "Input",ExpressionUUID->"bbb7be63-9904-45b1-af67-713c73d53373"],
-Cell[33892, 779, 14705, 347, 148, "Output",ExpressionUUID->"4d79b353-1512-4de9-bf50-737811ffec4a"]
+Cell[34420, 789, 208, 4, 37, "Input",ExpressionUUID->"bbb7be63-9904-45b1-af67-713c73d53373"],
+Cell[34631, 795, 14705, 347, 148, "Output",ExpressionUUID->"4d79b353-1512-4de9-bf50-737811ffec4a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48634, 1131, 265, 5, 37, "Input",ExpressionUUID->"034a90cb-efe1-4621-b16b-3b0ed02e4a11"],
-Cell[48902, 1138, 538, 13, 73, "Output",ExpressionUUID->"f248ae69-0447-42cc-989a-b6301e6c9798"]
+Cell[49373, 1147, 203, 4, 37, "Input",ExpressionUUID->"2bfc518e-fafc-488c-ab7d-690e7aa00ae8"],
+Cell[49579, 1153, 12464, 298, 139, "Output",ExpressionUUID->"2a1cebd4-0574-41cc-8d5f-ce1ab67fe54b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[49477, 1156, 193, 4, 37, "Input",ExpressionUUID->"f782df1e-ca5c-4160-82a2-573b89d0d1cf"],
-Cell[49673, 1162, 441, 12, 73, "Output",ExpressionUUID->"19ff1da3-2661-43ad-88da-d718bd27269f"]
+Cell[62080, 1456, 265, 5, 37, "Input",ExpressionUUID->"034a90cb-efe1-4621-b16b-3b0ed02e4a11"],
+Cell[62348, 1463, 538, 13, 73, "Output",ExpressionUUID->"f248ae69-0447-42cc-989a-b6301e6c9798"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[50151, 1179, 380, 8, 37, "Input",ExpressionUUID->"8e9261cf-426c-4057-922a-9802f5edc19d"],
-Cell[50534, 1189, 2578, 73, 156, "Output",ExpressionUUID->"5cea1fb2-8939-4b5f-ab2b-bca8ce7dcde3"]
+Cell[62923, 1481, 193, 4, 37, "Input",ExpressionUUID->"f782df1e-ca5c-4160-82a2-573b89d0d1cf"],
+Cell[63119, 1487, 441, 12, 73, "Output",ExpressionUUID->"19ff1da3-2661-43ad-88da-d718bd27269f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[53149, 1267, 206, 4, 37, "Input",ExpressionUUID->"9cdc70c2-e8f5-4808-8210-ff89bea1d825"],
-Cell[53358, 1273, 16647, 396, 119, "Output",ExpressionUUID->"0a4b58b6-aaef-4f43-aa50-8d5e4df20169"]
+Cell[63597, 1504, 380, 8, 37, "Input",ExpressionUUID->"8e9261cf-426c-4057-922a-9802f5edc19d"],
+Cell[63980, 1514, 2578, 73, 156, "Output",ExpressionUUID->"5cea1fb2-8939-4b5f-ab2b-bca8ce7dcde3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[70042, 1674, 320, 7, 37, "Input",ExpressionUUID->"324854bf-d6dd-4f19-ae84-6597725760db"],
-Cell[70365, 1683, 229, 5, 42, "Output",ExpressionUUID->"e85a3924-75e1-4e0d-8346-c17fd49ebd22"]
+Cell[66595, 1592, 206, 4, 37, "Input",ExpressionUUID->"9cdc70c2-e8f5-4808-8210-ff89bea1d825"],
+Cell[66804, 1598, 16647, 396, 119, "Output",ExpressionUUID->"0a4b58b6-aaef-4f43-aa50-8d5e4df20169"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[70631, 1693, 303, 7, 37, "Input",ExpressionUUID->"e49dc531-443f-4ca4-a2bf-482363c5cbf5"],
-Cell[70937, 1702, 223, 5, 42, "Output",ExpressionUUID->"91a3e3b0-f81f-49ac-9b42-562c89f840e3"]
-}, Open  ]],
-Cell[71175, 1710, 165, 3, 37, "Input",ExpressionUUID->"05f52270-48d7-46b5-9741-23cd3aeacf3f"],
-Cell[CellGroupData[{
-Cell[71365, 1717, 158, 3, 37, "Input",ExpressionUUID->"66192275-0723-45b3-a2af-15ea9e1dcc50"],
-Cell[71526, 1722, 1060, 32, 45, "Output",ExpressionUUID->"c47adf82-ab77-48b3-8656-4bccf58d0f04"]
+Cell[83488, 1999, 320, 7, 37, "Input",ExpressionUUID->"324854bf-d6dd-4f19-ae84-6597725760db"],
+Cell[83811, 2008, 229, 5, 42, "Output",ExpressionUUID->"e85a3924-75e1-4e0d-8346-c17fd49ebd22"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[72623, 1759, 1073, 28, 90, "Input",ExpressionUUID->"0948045c-b1ea-4702-829a-d478f1d25c5b"],
-Cell[73699, 1789, 4198, 114, 250, "Output",ExpressionUUID->"634f3348-20f4-4aff-9f49-5e6818799caf"]
+Cell[84077, 2018, 303, 7, 37, "Input",ExpressionUUID->"e49dc531-443f-4ca4-a2bf-482363c5cbf5"],
+Cell[84383, 2027, 223, 5, 42, "Output",ExpressionUUID->"91a3e3b0-f81f-49ac-9b42-562c89f840e3"]
+}, Open  ]],
+Cell[84621, 2035, 165, 3, 37, "Input",ExpressionUUID->"05f52270-48d7-46b5-9741-23cd3aeacf3f"],
+Cell[CellGroupData[{
+Cell[84811, 2042, 158, 3, 37, "Input",ExpressionUUID->"66192275-0723-45b3-a2af-15ea9e1dcc50"],
+Cell[84972, 2047, 1060, 32, 45, "Output",ExpressionUUID->"c47adf82-ab77-48b3-8656-4bccf58d0f04"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[77934, 1908, 189, 3, 37, "Input",ExpressionUUID->"1f9d8450-3807-411f-af4a-19c3923e6aab"],
-Cell[78126, 1913, 20916, 393, 697, "Output",ExpressionUUID->"e4dfa91b-9800-42ac-8ce7-8ac0bd02ee03"]
+Cell[86069, 2084, 1073, 28, 90, "Input",ExpressionUUID->"0948045c-b1ea-4702-829a-d478f1d25c5b"],
+Cell[87145, 2114, 4198, 114, 250, "Output",ExpressionUUID->"634f3348-20f4-4aff-9f49-5e6818799caf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[91380, 2233, 189, 3, 37, "Input",ExpressionUUID->"1f9d8450-3807-411f-af4a-19c3923e6aab"],
+Cell[91572, 2238, 20916, 393, 697, "Output",ExpressionUUID->"e4dfa91b-9800-42ac-8ce7-8ac0bd02ee03"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[99091, 2312, 180, 3, 84, "Section",ExpressionUUID->"6c1e6453-e2de-4b2d-932f-e9b0cb490d5e"],
+Cell[112537, 2637, 180, 3, 84, "Section",ExpressionUUID->"6c1e6453-e2de-4b2d-932f-e9b0cb490d5e"],
 Cell[CellGroupData[{
-Cell[99296, 2319, 1855, 46, 220, "Input",ExpressionUUID->"8a57b582-7ff5-4e76-82f1-5c51309a3183"],
-Cell[101154, 2367, 3535, 76, 771, "Output",ExpressionUUID->"2a81f460-518d-4b38-b264-13c7eb13d17d"]
+Cell[112742, 2644, 1855, 46, 220, "Input",ExpressionUUID->"8a57b582-7ff5-4e76-82f1-5c51309a3183"],
+Cell[114600, 2692, 3535, 76, 771, "Output",ExpressionUUID->"2a81f460-518d-4b38-b264-13c7eb13d17d"]
 }, Open  ]]
 }, Open  ]],
-Cell[104716, 2447, 233, 4, 84, "Section",ExpressionUUID->"a9f64c6e-22bf-4a67-b549-dde34c2a0d29"],
+Cell[118162, 2772, 233, 4, 84, "Section",ExpressionUUID->"a9f64c6e-22bf-4a67-b549-dde34c2a0d29"],
 Cell[CellGroupData[{
-Cell[104974, 2455, 315, 6, 65, "Section",ExpressionUUID->"fe2dd573-8f37-4319-a4d4-1b8f0e21c513"],
+Cell[118420, 2780, 315, 6, 65, "Section",ExpressionUUID->"fe2dd573-8f37-4319-a4d4-1b8f0e21c513"],
 Cell[CellGroupData[{
-Cell[105314, 2465, 1270, 32, 194, "Input",ExpressionUUID->"226f0714-d23d-4fd2-a156-a7d72a2d1fc8"],
-Cell[106587, 2499, 12484, 367, 209, "Output",ExpressionUUID->"9a44bc20-059d-4e14-b9a4-bda77bde5d23"]
+Cell[118760, 2790, 1270, 32, 194, "Input",ExpressionUUID->"226f0714-d23d-4fd2-a156-a7d72a2d1fc8"],
+Cell[120033, 2824, 12484, 367, 209, "Output",ExpressionUUID->"9a44bc20-059d-4e14-b9a4-bda77bde5d23"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[119108, 2871, 616, 15, 64, "Input",ExpressionUUID->"bdf32ac4-6b1b-4181-9f36-26f7986ae9eb"],
-Cell[119727, 2888, 2508, 76, 179, "Output",ExpressionUUID->"cb30d2cf-4d18-4bda-8f40-5912995e76f8"]
+Cell[132554, 3196, 616, 15, 64, "Input",ExpressionUUID->"bdf32ac4-6b1b-4181-9f36-26f7986ae9eb"],
+Cell[133173, 3213, 2508, 76, 179, "Output",ExpressionUUID->"cb30d2cf-4d18-4bda-8f40-5912995e76f8"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[122284, 2970, 393, 6, 84, "Section",ExpressionUUID->"d6aa2619-f26d-4b1b-9eec-d4a2cad61902"],
-Cell[122680, 2978, 208, 4, 37, "Input",ExpressionUUID->"af5b4cf3-7c39-40a5-9919-6c68a67cac14"],
-Cell[122891, 2984, 3628, 83, 376, "Input",ExpressionUUID->"b1e2eda0-a7ab-405a-bdff-04c7941fd32a"],
+Cell[135730, 3295, 393, 6, 84, "Section",ExpressionUUID->"d6aa2619-f26d-4b1b-9eec-d4a2cad61902"],
+Cell[136126, 3303, 208, 4, 37, "Input",ExpressionUUID->"af5b4cf3-7c39-40a5-9919-6c68a67cac14"],
+Cell[136337, 3309, 3628, 83, 376, "Input",ExpressionUUID->"b1e2eda0-a7ab-405a-bdff-04c7941fd32a"],
 Cell[CellGroupData[{
-Cell[126544, 3071, 245, 4, 37, "Input",ExpressionUUID->"7de06a09-4a25-4c9f-83f4-34ed3fbf50cf"],
-Cell[126792, 3077, 4187, 113, 250, "Output",ExpressionUUID->"151a01fe-18fc-4d8e-b74f-b3378f37b305"]
+Cell[139990, 3396, 245, 4, 37, "Input",ExpressionUUID->"7de06a09-4a25-4c9f-83f4-34ed3fbf50cf"],
+Cell[140238, 3402, 4187, 113, 250, "Output",ExpressionUUID->"151a01fe-18fc-4d8e-b74f-b3378f37b305"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[131016, 3195, 253, 5, 37, "Input",ExpressionUUID->"17e8cccc-f1bc-4422-9c7f-62680bfe29f1"],
-Cell[131272, 3202, 292, 7, 42, "Output",ExpressionUUID->"205a116a-77a9-4cd7-a4dc-4e97ece2389b"]
+Cell[144462, 3520, 253, 5, 37, "Input",ExpressionUUID->"17e8cccc-f1bc-4422-9c7f-62680bfe29f1"],
+Cell[144718, 3527, 292, 7, 42, "Output",ExpressionUUID->"205a116a-77a9-4cd7-a4dc-4e97ece2389b"]
 }, Open  ]],
-Cell[131579, 3212, 1184, 35, 128, "Input",ExpressionUUID->"99aad106-bd55-46c8-a09b-9634fbcd74f8"],
+Cell[145025, 3537, 1184, 35, 128, "Input",ExpressionUUID->"99aad106-bd55-46c8-a09b-9634fbcd74f8"],
 Cell[CellGroupData[{
-Cell[132788, 3251, 1387, 36, 194, "Input",ExpressionUUID->"3fe7c38e-d3a3-4241-99b2-6a7fa3cd9499"],
-Cell[134178, 3289, 7086, 165, 250, "Output",ExpressionUUID->"86d0dc57-8c38-4d43-8689-d51a86935f4e"]
+Cell[146234, 3576, 1387, 36, 194, "Input",ExpressionUUID->"3fe7c38e-d3a3-4241-99b2-6a7fa3cd9499"],
+Cell[147624, 3614, 7086, 165, 250, "Output",ExpressionUUID->"86d0dc57-8c38-4d43-8689-d51a86935f4e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[141301, 3459, 2573, 54, 142, "Input",ExpressionUUID->"445ff1f5-c013-4732-8e82-0fcce5a2a7a4"],
-Cell[143877, 3515, 3128, 78, 87, "Output",ExpressionUUID->"b11ec0e6-e0be-474c-ab70-3e6b59f8134a"]
+Cell[154747, 3784, 2573, 54, 142, "Input",ExpressionUUID->"445ff1f5-c013-4732-8e82-0fcce5a2a7a4"],
+Cell[157323, 3840, 3128, 78, 87, "Output",ExpressionUUID->"b11ec0e6-e0be-474c-ab70-3e6b59f8134a"]
 }, Open  ]]
 }, Open  ]],
-Cell[147032, 3597, 343, 7, 84, "Section",ExpressionUUID->"8443ebf2-63c1-4fba-b883-03f08cab924a"]
+Cell[160478, 3922, 343, 7, 84, "Section",ExpressionUUID->"8443ebf2-63c1-4fba-b883-03f08cab924a"]
 }, Open  ]]
 }
 ]

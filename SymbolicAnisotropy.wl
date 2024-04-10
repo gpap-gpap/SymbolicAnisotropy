@@ -64,7 +64,7 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saVariables,"saVariables[head$, exp
 "
     ]
 
-saPlaneWave::usage = "saPlaneWave ...";
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saPlaneWave,"saPlaneWave[A$, k$, w$] generates the vector function A$i Exp[\[ImaginaryI] (k$j . #1 - w$ #2)]&"]
 
 saPhaseVelocity::usage = "saPhaseVelocity[head] ...";
 
