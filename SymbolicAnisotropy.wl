@@ -206,7 +206,7 @@ saVoigt2Tensor[symbol_, matrix_] /; Dimensions[matrix] === {6, 6} :=
     ];
 
 saHumanReadable[head_] :=
-    head[a__] :> ToExpression[(ToString[head] <> (ToString /@ {a}))];
+    head[Global`a__] :> ToExpression[(ToString[head] <> (ToString /@ {Global`a}))];
 
 saChristoffelMatrix[c_, n_] /; Dimensions[c] === {3, 3, 3, 3} && Dimensions[
     n] === {3} :=
