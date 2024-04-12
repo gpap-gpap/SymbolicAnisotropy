@@ -5,7 +5,7 @@
 
 # Symbolic Anisotropy
 
-A Wolfram Language package for symbolic calculations in anisotropic elasticity.
+A Wolfram Language package for symbolic calculations in anisotropic elasticity. The package provides tools for the manipulation of elastic tensors of arbitrary symmetry, the calculation of Christoffel tensors, phase velocities, polarization vectors, and reflection and transmission coefficients. The package is designed to be used in the context of seismology, geophysics, and materials science.
 
 ## Requirements
 
@@ -14,6 +14,21 @@ _Mathematica >13.1_
 ## Installation
 
 `<< "https://raw.githubusercontent.com/gpap-gpap/SymbolicAnisotropy/main/SymbolicAnisotropy.wl"`
+
+## Features
+
+- Elastic tensors of arbitrary symmetry
+- Rotation and translation transformations for tilt
+- Christoffel tensor and calculations
+- Phase velocities and polarization vectors
+
+## Roadmap
+
+- [ ] Reflection and transmission coefficients
+- [ ] Group Velocities
+- [ ] Slowness Surfaces
+- [ ] Plane wave analysis
+- [ ] Ray tracing
 
 ## Maintenance and feedback
 
