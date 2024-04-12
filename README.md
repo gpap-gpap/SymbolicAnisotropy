@@ -13,7 +13,7 @@ _Mathematica >13.1_
 
 ## Installation
 
-`<<"https://github.com/gpap-gpap/SymbolicAnisotropy/SymbolicAnisotropy.wl"`
+`<< "https://raw.githubusercontent.com/gpap-gpap/SymbolicAnisotropy/main/SymbolicAnisotropy.wl"`
 
 ## Maintenance and feedback
 
