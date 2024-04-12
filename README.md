@@ -23,8 +23,6 @@ _Mathematica >13.1_
 
 ## References
 
-bibliography:
-
 1. Musgrave, M. J. P. (1970). _Crystal acoustics: Introduction to the study of elastic waves and vibrations in crystals_. Holden-Day, San Francisco
 
 2. Nye, J. F. (1985). Physical properties of crystals: their representation by tensors and matrices. Oxford university press.
