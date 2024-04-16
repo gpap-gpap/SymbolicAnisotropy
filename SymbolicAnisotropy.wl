@@ -72,6 +72,11 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saReshape,
 saReshape::unknownShape = "`1` is neither a 6x6 matrix nor rank-4 tensor";
 saReshape::unknownObject = " operates only on matrix-like objects, which `1` is not"
 
+
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saConvert,
+     "saConvert[symb$,tens$] reshapes and converts coefficients of tens$ between Voigt and tensor notations"
+    ];
+saConvert::unknownArgument = "expected symbol, matrix-like object pair, got `1`."
 saPhaseVelocity::usage = "saPhaseVelocity[head] ...";
 
 saGroupVelocity::usage = "saGroupVelocity[head] ...";
@@ -183,6 +188,7 @@ saBondMatrix[a_] :=
         ]
     ]
 
+
 saVoigtReplacementRule[symbol_] :=
     With[{ip = voigtTable},
         symbol[Global`a_, Global`b_, Global`c_, Global`d_] :> (symbol[
@@ -215,9 +221,16 @@ saReshape[tensor_]:=(
         Message[saReshape::unknownObject, tensor];
         $Failed
     );
-     
-     
-      
+    
+saConvert[symbol_Symbol, matrix_List] /; Dimensions[matrix] === {6, 6} :=
+saReshape[matrix]/.saTensorReplacementRule[symbol];
+saConvert[symbol_Symbol, tensor_List] /; Dimensions[tensor] === {3, 3, 3, 
+    3}:=
+saReshape[tensor]/.saVoigtReplacementRule[symbol];
+saConvert[any__]:=(
+        Message[saConvert::unknownArgument, any];
+        $Failed
+    );
 
 saTensor2Voigt[symbol_, tensor_] /; Dimensions[tensor] === {3, 3, 3, 
     3} :=
