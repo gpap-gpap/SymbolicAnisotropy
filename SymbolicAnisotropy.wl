@@ -66,6 +66,12 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saVariables,"saVariables[head$, exp
 
 GeneralUtilities`SetUsage[SymbolicAnisotropy`saPlaneWave,"saPlaneWave[A$, k$, w$] generates the vector function A$i Exp[\[ImaginaryI] (k$j . #1 - w$ #2)]&"]
 
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saReshape,
+     "saReshape[tens$] reshapes tens$ between matrix and tensor notation"
+    ];
+saReshape::unknownShape = "`1` is neither a 6x6 matrix nor rank-4 tensor";
+saReshape::unknownObject = " operates only on matrix-like objects, which `1` is not"
+
 saPhaseVelocity::usage = "saPhaseVelocity[head] ...";
 
 saGroupVelocity::usage = "saGroupVelocity[head] ...";
@@ -189,6 +195,30 @@ saTensorReplacementRule[symbol_] :=
             ip, Global`a], Sequence @@ First @ Position[ip, Global`b]])
     ];
 
+    
+saReshape[matrix_List]/; Dimensions[matrix] === {6, 6}:= Module[{ip = voigtTable, table},
+        table = (Table[matrix[[ip[[i, j]], ip[[k, l]]]], {i, 3}, {j, 
+            3}, {k, 3}, {l, 3}]);
+        Transpose[table, {1, 2, 3}]
+    ];
+saReshape[tensor_List]/; Dimensions[tensor] === {3, 3, 3, 
+    3} := Module[{ip = voigtTable, table},
+        table = (Table[tensor[[Sequence @@ First @ Position[ip, i], Sequence
+             @@ First @ Position[ip, j]]], {i, 6}, {j, 6}]);
+        table
+    ];
+saReshape[tensor_List]:=(
+        Message[saReshape::unknownShape, tensor];
+        $Failed
+    );
+saReshape[tensor_]:=(
+        Message[saReshape::unknownObject, tensor];
+        $Failed
+    );
+     
+     
+      
+
 saTensor2Voigt[symbol_, tensor_] /; Dimensions[tensor] === {3, 3, 3, 
     3} :=
     Module[{ip = voigtTable, table},
@@ -221,6 +251,10 @@ saPlaneWave[A_, k_, \[Omega]_] /; (Dimensions[A] === {3} && Dimensions[
     k] === {3}) :=
     A Exp[I (k . #1 - \[Omega] #2)]&;
 
+(*Options[saPhaseVelocity] = {"Method" -> "Analytic"};
+saPhaseVelocity[head_,tensor_, unitslownes_ OptionsPattern[]] :=
+     OptionValue @ "Method" *)
+    
 End[];
 
 EndPackage[];
