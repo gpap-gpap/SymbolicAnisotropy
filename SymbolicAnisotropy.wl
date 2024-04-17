@@ -28,12 +28,6 @@ For example saContract[saRotationTransformation[\[Theta], {1,0,0}], saCreateElas
 "
     ];
 
-GeneralUtilities`SetUsage[SymbolicAnisotropy`saTensor2Voigt, "saTensor2Voigt[head$, tensor$] converts a rank-4 symbolic elastic tensor$ with entries head$[i,j,k,l] to the corresponding Voigt 6x6 matrix with entries head$[i,j]"
-    ]
-
-GeneralUtilities`SetUsage[SymbolicAnisotropy`saVoigt2Tensor, "aVoigt2Tensor[head$, matrix$] converts a symbolic Voigt 6x6 matrix with entries head$[i,j] to the corresponding rank-4 elastic tensor$ with entries head$[i,j,k,l]"
-    ]
-
 GeneralUtilities`SetUsage[SymbolicAnisotropy`saVoigtReplacementRule,"saVoigtReplacementRule[head$] is a replacement rule for tensor indices to matrix indices for elements with head$[i,j,k,l].
 There is no tensor-to-matrix reshaping taking place by the replacement rule, just relabelling of indices.
 For instance c[1,2,1,2]/.saVoigtReplacementRule[c] returns c[6,6]
@@ -64,19 +58,21 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saVariables,"saVariables[head$, exp
 "
     ]
 
-GeneralUtilities`SetUsage[SymbolicAnisotropy`saPlaneWave,"saPlaneWave[A$, k$, w$] generates the vector function A$i Exp[\[ImaginaryI] (k$j . #1 - w$ #2)]&"]
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saPlaneWave, "saPlaneWave[A$, k$, w$] generates the vector function A$i Exp[\[ImaginaryI] (k$j . #1 - w$ #2)]&"
+    ]
 
-GeneralUtilities`SetUsage[SymbolicAnisotropy`saReshape,
-     "saReshape[tens$] reshapes tens$ between matrix and tensor notation"
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saReshape, "saReshape[tens$] reshapes tens$ between matrix and tensor notation"
     ];
+
 saReshape::unknownShape = "`1` is neither a 6x6 matrix nor rank-4 tensor";
+
 saReshape::unknownObject = " operates only on matrix-like objects, which `1` is not"
 
-
-GeneralUtilities`SetUsage[SymbolicAnisotropy`saConvert,
-     "saConvert[symb$,tens$] reshapes and converts coefficients of tens$ between Voigt and tensor notations"
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saConvert, "saConvert[symb$,tens$] reshapes and converts coefficients of tens$ between Voigt and tensor notations"
     ];
+
 saConvert::unknownArgument = "expected symbol, matrix-like object pair, got `1`."
+
 saPhaseVelocity::usage = "saPhaseVelocity[head] ...";
 
 saGroupVelocity::usage = "saGroupVelocity[head] ...";
@@ -150,8 +146,10 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
                                 *),
                             2 RotateLeft /@ mat RotateRight /@ mat(*upper right hand block - 2x product of complementary rows
+                                
                                 
                                 
                                 
@@ -171,9 +169,11 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
                                 *) ,
                             Array[Plus @@ Times @@@ Apply[symbol, strangeDet[
                                 ##], {2}]&, {3, 3}](*lower right hand block - weird vector product of submatrices
+                                
                                 
                                 
                                 
@@ -188,7 +188,6 @@ saBondMatrix[a_] :=
         ]
     ]
 
-
 saVoigtReplacementRule[symbol_] :=
     With[{ip = voigtTable},
         symbol[Global`a_, Global`b_, Global`c_, Global`d_] :> (symbol[
@@ -201,55 +200,49 @@ saTensorReplacementRule[symbol_] :=
             ip, Global`a], Sequence @@ First @ Position[ip, Global`b]])
     ];
 
-    
-saReshape[matrix_List]/; Dimensions[matrix] === {6, 6}:= Module[{ip = voigtTable, table},
+saReshape[matrix_List] /; Dimensions[matrix] === {6, 6} :=
+    Module[{ip = voigtTable, table},
         table = (Table[matrix[[ip[[i, j]], ip[[k, l]]]], {i, 3}, {j, 
             3}, {k, 3}, {l, 3}]);
         Transpose[table, {1, 2, 3}]
     ];
-saReshape[tensor_List]/; Dimensions[tensor] === {3, 3, 3, 
-    3} := Module[{ip = voigtTable, table},
+
+saReshape[tensor_List] /; Dimensions[tensor] === {3, 3, 3, 3} :=
+    Module[{ip = voigtTable, table},
         table = (Table[tensor[[Sequence @@ First @ Position[ip, i], Sequence
              @@ First @ Position[ip, j]]], {i, 6}, {j, 6}]);
         table
     ];
-saReshape[tensor_List]:=(
+
+saReshape[tensor_List] :=
+    (
         Message[saReshape::unknownShape, tensor];
         $Failed
     );
-saReshape[tensor_]:=(
+
+saReshape[tensor_] :=
+    (
         Message[saReshape::unknownObject, tensor];
         $Failed
     );
-    
-saConvert[symbol_Symbol, matrix_List] /; Dimensions[matrix] === {6, 6} :=
-saReshape[matrix]/.saTensorReplacementRule[symbol];
-saConvert[symbol_Symbol, tensor_List] /; Dimensions[tensor] === {3, 3, 3, 
-    3}:=
-saReshape[tensor]/.saVoigtReplacementRule[symbol];
-saConvert[any__]:=(
+
+saConvert[symbol_Symbol, matrix_List] /; Dimensions[matrix] === {6, 6
+    } :=
+    saReshape[matrix] /. saTensorReplacementRule[symbol];
+
+saConvert[symbol_Symbol, tensor_List] /; Dimensions[tensor] === {3, 3,
+     3, 3} :=
+    saReshape[tensor] /. saVoigtReplacementRule[symbol];
+
+saConvert[any__] :=
+    (
         Message[saConvert::unknownArgument, any];
         $Failed
     );
 
-saTensor2Voigt[symbol_, tensor_] /; Dimensions[tensor] === {3, 3, 3, 
-    3} :=
-    Module[{ip = voigtTable, table},
-        table = (Table[tensor[[Sequence @@ First @ Position[ip, i], Sequence
-             @@ First @ Position[ip, j]]], {i, 6}, {j, 6}]);
-        table /. saVoigtReplacementRule[symbol]
-    ];
-
-saVoigt2Tensor[symbol_, matrix_] /; Dimensions[matrix] === {6, 6} :=
-    Module[{ip = voigtTable, table},
-        table = (Table[matrix[[ip[[i, j]], ip[[k, l]]]], {i, 3}, {j, 
-            3}, {k, 3}, {l, 3}]);
-        Transpose[table, {1, 2, 3}] /. saTensorReplacementRule[symbol
-            ]
-    ];
-
 saHumanReadable[head_] :=
-    head[Global`a__] :> ToExpression[(ToString[head] <> (ToString /@ {Global`a}))];
+    head[Global`a__] :> ToExpression[(ToString[head] <> (ToString /@ 
+        {Global`a}))];
 
 saChristoffelMatrix[c_, n_] /; Dimensions[c] === {3, 3, 3, 3} && Dimensions[
     n] === {3} :=
@@ -267,7 +260,7 @@ saPlaneWave[A_, k_, \[Omega]_] /; (Dimensions[A] === {3} && Dimensions[
 (*Options[saPhaseVelocity] = {"Method" -> "Analytic"};
 saPhaseVelocity[head_,tensor_, unitslownes_ OptionsPattern[]] :=
      OptionValue @ "Method" *)
-    
+
 End[];
 
 EndPackage[];
