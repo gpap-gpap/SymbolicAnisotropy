@@ -13,7 +13,8 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saRotationTransformation,
 GeneralUtilities`SetUsage[SymbolicAnisotropy`saCreateElasticityTensor,
      "saCreateElasticityTensor[head$] returns a rank-4 symbolic elastic tensor with triclinic symmetry and 21 independent components head$(ijkl) in the form head$[i, j, k, l].
 saCreateElasticityTensor[head$, 'Symmetry'->$$] returns a rank-4 elastic tensor with additional symmetries as follows:
-| 'Symmetry' | 'Triclinic' |  'Monoclinic' | 'Orthotropic' | 'Transverse Isotropic' | 'Isotropic' |
+| Symmetry | Triclinic |  Monoclinic | Orthotropic | Transverse Isotropic | Isotropic |
+| --- | --- | --- | --- | --- | --- |
 | Independent Components |  21 | 13 | 9 | 5 | 2 |
 | Symmetry type |  None | Reflection | Reflection | Rotation | Rotation |
 | Symmetry axis |  None | {0,0,1} | {0,0,1} and {1,0,0} | {0,0,1} | {0,0,1} and{1,0,0} |
@@ -147,8 +148,10 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
                                 *),
                             2 RotateLeft /@ mat RotateRight /@ mat(*upper right hand block - 2x product of complementary rows
+                                
                                 
                                 
                                 
@@ -170,9 +173,11 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
                                 *) ,
                             Array[Plus @@ Times @@@ Apply[symbol, strangeDet[
                                 ##], {2}]&, {3, 3}](*lower right hand block - weird vector product of submatrices
+                                
                                 
                                 
                                 
@@ -241,8 +246,10 @@ saConvert[any__] :=
     );
 
 saHumanReadable[head_] :=
-    head[Global`a__] :> ToExpression[(ToString[head] <> (ToString /@ 
-        {Global`a}))];
+    {head[Global`a_, Global`b_] :> Subscript[ToString[head], ToString[
+        Global`a] <> ToString[Global`b]], head[Global`a_, Global`b_, Global`c_,
+         Global`d_] :> Subscript[ToString[head], ToString[Global`a] <> ToString[
+        Global`b] <> ToString[Global`c] <> ToString[Global`a]]}
 
 saChristoffelMatrix[c_, n_] /; Dimensions[c] === {3, 3, 3, 3} && Dimensions[
     n] === {3} :=
