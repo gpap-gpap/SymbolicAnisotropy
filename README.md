@@ -42,4 +42,5 @@ _Mathematica >13.1_
 3. Tsvankin, I. (2012). _Seismic signatures and analysis of reflection data in anisotropic media_. Society of Exploration Geophysicists.
 4. _Structural mechanics MIT lecture notes_, <https://web.mit.edu/16.20/homepage/>
 5. Helbig, K. (2015). _Foundations of Anisotropy for Exploration Seismics: Section I. Seismic Exploration_. Elsevier.
+
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
