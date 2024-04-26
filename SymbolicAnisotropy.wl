@@ -74,9 +74,13 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saConvert, "saConvert[symb$,tens$] 
 
 saConvert::unknownArgument = "expected symbol, matrix-like object pair, got `1`."
 
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saStrain, "saStrain[x$, y$, z$] is the matrix of derivatives acting on displacement to get the strain tensor"
+    ];
+
+(*
 saPhaseVelocity::usage = "saPhaseVelocity[head] ...";
 
-saGroupVelocity::usage = "saGroupVelocity[head] ...";
+saGroupVelocity::usage = "saGroupVelocity[head] ...";*)
 
 Begin["`Private`"]
 
@@ -149,8 +153,14 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
+                                
+                                
                                 *),
                             2 RotateLeft /@ mat RotateRight /@ mat(*upper right hand block - 2x product of complementary rows
+                                
+                                
+                                
                                 
                                 
                                 
@@ -174,9 +184,15 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
+                                
+                                
                                 *) ,
                             Array[Plus @@ Times @@@ Apply[symbol, strangeDet[
                                 ##], {2}]&, {3, 3}](*lower right hand block - weird vector product of submatrices
+                                
+                                
+                                
                                 
                                 
                                 
@@ -263,6 +279,12 @@ saVariables[c_, expr_] :=
 saPlaneWave[A_, k_, \[Omega]_] /; (Dimensions[A] === {3} && Dimensions[
     k] === {3}) :=
     A Exp[I (k . #1 - \[Omega] #2)]&;
+
+saStrain[x_, y_, z_] :=
+    {{D[#1, {x, 1}], 1/2 (D[#2, {x, 1}] + D[#1, {y, 1}]), 1/2 (D[#3, 
+        {x, 1}] + D[#1, {z, 1}])}, {1/2 (D[#2, {x, 1}] + D[#1, {y, 1}]), D[#2,
+         {y, 1}], 1/2 (D[#3, {y, 1}] + D[#2, {z, 1}])}, {1/2 (D[#3, {x, 1}] +
+         D[#1, {z, 1}]), 1/2 (D[#3, {y, 1}] + D[#2, {z, 1}]), D[#3, {z, 1}]}}&
 
 (*Options[saPhaseVelocity] = {"Method" -> "Analytic"};
 saPhaseVelocity[head_,tensor_, unitslownes_ OptionsPattern[]] :=
