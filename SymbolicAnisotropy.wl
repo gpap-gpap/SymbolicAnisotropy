@@ -74,6 +74,12 @@ GeneralUtilities`SetUsage[SymbolicAnisotropy`saConvert, "saConvert[symb$,tens$] 
 
 saConvert::unknownArgument = "expected symbol, matrix-like object pair, got `1`."
 
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saReplace, "saReplace[symb$] converts coefficients with head symb$ between Voigt and tensor notations"
+    ];
+
+GeneralUtilities`SetUsage[SymbolicAnisotropy`saThomsenParameters, "saThomsenParameters[symb$, density$] gives the definition of Thomsen's parameters as a set of equations"
+    ];
+
 GeneralUtilities`SetUsage[SymbolicAnisotropy`saStrain, "saStrain[x$, y$, z$] is the matrix of derivatives acting on displacement to get the strain tensor"
     ];
 
@@ -156,8 +162,10 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
                                 *),
                             2 RotateLeft /@ mat RotateRight /@ mat(*upper right hand block - 2x product of complementary rows
+                                
                                 
                                 
                                 
@@ -187,9 +195,11 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
                                 *) ,
                             Array[Plus @@ Times @@@ Apply[symbol, strangeDet[
                                 ##], {2}]&, {3, 3}](*lower right hand block - weird vector product of submatrices
+                                
                                 
                                 
                                 
@@ -209,7 +219,15 @@ saBondMatrix[a_] :=
         ]
     ]
 
-saVoigtReplacementRule[symbol_] :=
+saReplace[symbol_] :=
+    With[{ip = voigtTable},
+        {symbol[Global`a_, Global`b_, Global`c_, Global`d_] :> (symbol[
+            ip[[Global`a, Global`b]], ip[[Global`c, Global`d]]]), symbol[Global`a_,
+             Global`b_] :> (symbol[Sequence @@ First @ Position[ip, Global`a], Sequence
+             @@ First @ Position[ip, Global`b]])}
+    ];
+
+(*saVoigtReplacementRule[symbol_] :=
     With[{ip = voigtTable},
         symbol[Global`a_, Global`b_, Global`c_, Global`d_] :> (symbol[
             ip[[Global`a, Global`b]], ip[[Global`c, Global`d]]])
@@ -219,7 +237,7 @@ saTensorReplacementRule[symbol_] :=
     With[{ip = voigtTable},
         symbol[Global`a_, Global`b_] :> (symbol[Sequence @@ First @ Position[
             ip, Global`a], Sequence @@ First @ Position[ip, Global`b]])
-    ];
+    ];*)
 
 saReshape[matrix_List] /; Dimensions[matrix] === {6, 6} :=
     Module[{ip = voigtTable, table},
@@ -249,11 +267,11 @@ saReshape[tensor_] :=
 
 saConvert[symbol_Symbol, matrix_List] /; Dimensions[matrix] === {6, 6
     } :=
-    saReshape[matrix] /. saTensorReplacementRule[symbol];
+    saReshape[matrix] /. saReplace[symbol];
 
 saConvert[symbol_Symbol, tensor_List] /; Dimensions[tensor] === {3, 3,
      3, 3} :=
-    saReshape[tensor] /. saVoigtReplacementRule[symbol];
+    saReshape[tensor] /. saReplace[symbol];
 
 saConvert[any__] :=
     (
@@ -285,6 +303,16 @@ saStrain[x_, y_, z_] :=
         {x, 1}] + D[#1, {z, 1}])}, {1/2 (D[#2, {x, 1}] + D[#1, {y, 1}]), D[#2,
          {y, 1}], 1/2 (D[#3, {y, 1}] + D[#2, {z, 1}])}, {1/2 (D[#3, {x, 1}] +
          D[#1, {z, 1}]), 1/2 (D[#3, {y, 1}] + D[#2, {z, 1}]), D[#3, {z, 1}]}}&
+
+saThomsenParameters[symbol_, density_] :=
+    Block[{Global`\[Alpha]0, Global`\[Beta]0, Global`\[Epsilon], Global`\[Gamma], Global`\[Delta]},
+            {Global`\[Alpha]0 == Sqrt[symbol[3, 3] / density], Global`\[Beta]0 == Sqrt[
+                symbol[5, 5] / density], Global`\[Epsilon] == (symbol[1, 1] - symbol[3, 3]) /
+                 (2 symbol[3, 3]), Global`\[Gamma] == (-symbol[5, 5] + symbol[6, 6]) / (2 symbol[
+                5, 5]), Global`\[Delta] == ((symbol[1, 3] + symbol[5, 5]) ^ 2 - (symbol[3, 3
+                ] - symbol[5, 5]) ^ 2) / (2 symbol[3, 3] (symbol[3, 3] - symbol[5, 5]
+                ))}
+        ];
 
 (*Options[saPhaseVelocity] = {"Method" -> "Analytic"};
 saPhaseVelocity[head_,tensor_, unitslownes_ OptionsPattern[]] :=
