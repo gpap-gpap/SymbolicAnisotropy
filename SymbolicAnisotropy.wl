@@ -163,8 +163,10 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
                                 *),
                             2 RotateLeft /@ mat RotateRight /@ mat(*upper right hand block - 2x product of complementary rows
+                                
                                 
                                 
                                 
@@ -196,9 +198,11 @@ saBondMatrix[a_] :=
                                 
                                 
                                 
+                                
                                 *) ,
                             Array[Plus @@ Times @@@ Apply[symbol, strangeDet[
                                 ##], {2}]&, {3, 3}](*lower right hand block - weird vector product of submatrices
+                                
                                 
                                 
                                 
@@ -305,14 +309,15 @@ saStrain[x_, y_, z_] :=
          D[#1, {z, 1}]), 1/2 (D[#3, {y, 1}] + D[#2, {z, 1}]), D[#3, {z, 1}]}}&
 
 saThomsenParameters[symbol_, density_] :=
-    Block[{Global`\[Alpha]0, Global`\[Beta]0, Global`\[Epsilon], Global`\[Gamma], Global`\[Delta]},
-            {Global`\[Alpha]0 == Sqrt[symbol[3, 3] / density], Global`\[Beta]0 == Sqrt[
-                symbol[5, 5] / density], Global`\[Epsilon] == (symbol[1, 1] - symbol[3, 3]) /
-                 (2 symbol[3, 3]), Global`\[Gamma] == (-symbol[5, 5] + symbol[6, 6]) / (2 symbol[
-                5, 5]), Global`\[Delta] == ((symbol[1, 3] + symbol[5, 5]) ^ 2 - (symbol[3, 3
-                ] - symbol[5, 5]) ^ 2) / (2 symbol[3, 3] (symbol[3, 3] - symbol[5, 5]
-                ))}
-        ];
+    Block[{Global`\[Alpha]0, Global`\[Beta]0, Global`\[Epsilon], Global`\[Gamma],
+         Global`\[Delta]},
+        {Global`\[Alpha]0 == Sqrt[symbol[3, 3] / density], Global`\[Beta]0
+             == Sqrt[symbol[5, 5] / density], Global`\[Epsilon] == (symbol[1, 1] 
+            - symbol[3, 3]) / (2 symbol[3, 3]), Global`\[Gamma] == (-symbol[5, 5]
+             + symbol[6, 6]) / (2 symbol[5, 5]), Global`\[Delta] == ((symbol[1, 3
+            ] + symbol[5, 5]) ^ 2 - (symbol[3, 3] - symbol[5, 5]) ^ 2) / (2 symbol[
+            3, 3] (symbol[3, 3] - symbol[5, 5]))}
+    ];
 
 (*Options[saPhaseVelocity] = {"Method" -> "Analytic"};
 saPhaseVelocity[head_,tensor_, unitslownes_ OptionsPattern[]] :=
