@@ -21,14 +21,14 @@ _Mathematica >13.1_
 - Rotation and translation transformations for tilt
 - Christoffel tensor and calculations
 - Phase velocities and polarization vectors
+- Reflection and transmission coefficients
 
 ## Roadmap
 
-- [ ] Reflection and transmission coefficients
 - [ ] Group Velocities
 - [ ] Slowness Surfaces
-- [ ] Plane wave analysis
 - [ ] Ray tracing
+- [ ] NMO analysis
 
 ## Maintenance and feedback
 
