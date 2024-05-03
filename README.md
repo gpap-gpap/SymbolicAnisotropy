@@ -17,13 +17,20 @@ _Mathematica >13.1_
 
 ## Features
 
-- Elastic tensors of arbitrary symmetry
+- Elastic tensors of arbitrary symmetry:
+`saCreateElasticityTensor[c  , "Symmetry" -> "Monoclinic"] //saConvert[c, #] &`
+$\begin{bmatrix}
+ \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & 0 & 0 & \text{c}_{16} \\
+ \text{c}_{12} & \text{c}_{22} & \text{c}_{23} & 0 & 0 & \text{c}_{62} \\
+ \text{c}_{13} & \text{c}_{23} & \text{c}_{33} & 0 & 0 & \text{c}_{63} \\
+ 0 & 0 & 0 & \text{c}_{44} & \text{c}_{54} & 0 \\
+ 0 & 0 & 0 & \text{c}_{54} & \text{c}_{55} & 0 \\
+ \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & 0 & 0 & \text{c}_{66} \\\\\end{bmatrix}$
 - Rotation and translation transformations for tilt
 - Christoffel tensor and calculations
-- Phase velocities and polarization vectors
-- Reflection and transmission coefficients
-
+- Phase velocities and polarization vectors:
 <img src="images/animatied_slowness.gif" width="400"/>
+- Reflection and transmission coefficients
 
 ## Roadmap
 
