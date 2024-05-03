@@ -17,7 +17,7 @@ _Mathematica >13.1_
 
 ## Features
 
-- Elastic tensors of arbitrary symmetry:
+- :rocket: Elastic tensors of arbitrary symmetry:
 `saCreateElasticityTensor[c  , "Symmetry" -> sym]` where `c` is the tensor label and `sym` is the symmetry of the tensor. The following symmetries are supported:
   - Triclinic:
 
@@ -94,8 +94,10 @@ _Mathematica >13.1_
 
 - Rotation and translation transformations for tilt
 - Christoffel tensor and calculations
-- Phase velocities and polarization vectors:
-<img src="images/animatied_slowness.gif" width="400"/>
+- Phase velocities and polarization vectors:scream::
+<img src="images/animated_velocity.gif" width="400"/>
+
+<img src="images/animated_velocity2.gif" width="400"/>
 - Reflection and transmission coefficients
 
 ## Roadmap
