@@ -92,9 +92,9 @@ _Mathematica >13.1_
     \end{bmatrix}
     ```
 
-- Rotation and translation transformations for tilt
-- Christoffel tensor and calculations
-- Phase velocities and slowness surfaces :scream: :
+- :rocket: Rotation and translation transformations for tilt
+- :rocket: Christoffel tensor and calculations
+- :rocket: Phase velocities and slowness surfaces :scream: :
 <img src="images/slowness_surface_1.png" width="400"/>
 
 <img src="images/slowness_surface_2.png" width="400"/>
