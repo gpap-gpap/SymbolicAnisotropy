@@ -18,9 +18,31 @@ _Mathematica >13.1_
 ## Features
 
 - Elastic tensors of arbitrary symmetry:
-`saCreateElasticityTensor[c  , "Symmetry" -> "Monoclinic"] //saConvert[c, #] &`
+  - Triclinic:
 
-```math
+  ```math
+
+\begin{bmatrix}
+    \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & \text{c}_{14} & \text{c}_{15} &
+   \text{c}_{16} \\
+
+ \text{c}_{12} & \text{c}_{22} & \text{c}_{23} & \text{c}_{24} & \text{c}_{52} &
+   \text{c}_{62} \\
+ \text{c}_{13} & \text{c}_{23} & \text{c}_{33} & \text{c}_{43} & \text{c}_{53} &
+   \text{c}_{63} \\
+ \text{c}_{14} & \text{c}_{24} & \text{c}_{43} & \text{c}_{44} & \text{c}_{54} &
+   \text{c}_{64} \\
+ \text{c}_{15} & \text{c}_{52} & \text{c}_{53} & \text{c}_{54} & \text{c}_{55} &
+   \text{c}_{65} \\
+ \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & \text{c}_{64} & \text{c}_{65} &
+   \text{c}_{66} \\
+   \end{bmatrix}
+
+```
+  - Monoclinic:
+
+  ```math  
+
 \begin{bmatrix}
  \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & 0 & 0 & \text{c}_{16} \\
  \text{c}_{12} & \text{c}_{22} & \text{c}_{23} & 0 & 0 & \text{c}_{62} \\
@@ -28,7 +50,12 @@ _Mathematica >13.1_
  0 & 0 & 0 & \text{c}_{44} & \text{c}_{54} & 0 \\
  0 & 0 & 0 & \text{c}_{54} & \text{c}_{55} & 0 \\
  \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & 0 & 0 & \text{c}_{66} \\\\\end{bmatrix}
+
  ```
+
+- Orthorhombic:
+- Transversely isotropic:
+- Isotropic:
 
 - Rotation and translation transformations for tilt
 - Christoffel tensor and calculations
