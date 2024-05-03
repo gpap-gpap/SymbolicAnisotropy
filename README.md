@@ -36,7 +36,7 @@ _Mathematica >13.1_
     \text{c}_{15} & \text{c}_{52} & \text{c}_{53} & \text{c}_{54} & \text{c}_{55} &
     \text{c}_{65} \\
     \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & \text{c}_{64} & \text{c}_{65} &
-    \text{c}_{66} \\
+    \text{c}_{66}
     \end{bmatrix}
     ```
 
@@ -49,7 +49,7 @@ _Mathematica >13.1_
     \text{c}_{13} & \text{c}_{23} & \text{c}_{33} & 0 & 0 & \text{c}_{63} \\
     0 & 0 & 0 & \text{c}_{44} & \text{c}_{54} & 0 \\
     0 & 0 & 0 & \text{c}_{54} & \text{c}_{55} & 0 \\
-    \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & 0 & 0 & \text{c}_{66} \\\end{bmatrix}
+    \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & 0 & 0 & \text{c}_{66} \end{bmatrix}
 
     ```
 
@@ -62,7 +62,7 @@ _Mathematica >13.1_
     \text{c}_{13} & \text{c}_{23} & \text{c}_{33} & 0 & 0 & 0 \\
     0 & 0 & 0 & \text{c}_{44} & 0 & 0 \\
     0 & 0 & 0 & 0 & \text{c}_{55} & 0 \\
-    0 & 0 & 0 & 0 & 0 & \text{c}_{66} \\
+    0 & 0 & 0 & 0 & 0 & \text{c}_{66} 
     \end{bmatrix}
 
     ```
@@ -77,7 +77,7 @@ _Mathematica >13.1_
     \text{c}_{13} & \text{c}_{13} & \text{c}_{33} & 0 & 0 & 0 \\
     0 & 0 & 0 & \text{c}_{55} & 0 & 0 \\
     0 & 0 & 0 & 0 & \text{c}_{55} & 0 \\
-    0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} \\
+    0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
     \end{bmatrix}
 
     ```
@@ -91,7 +91,7 @@ _Mathematica >13.1_
         \text{c}_{12} & \text{c}_{12} & \text{c}_{11} & 0 & 0 & 0 \\
         0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 & 0 \\
         0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 \\
-        0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} \\
+        0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
         \end{bmatrix}
 
         ```
