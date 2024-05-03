@@ -23,6 +23,8 @@ _Mathematica >13.1_
 - Phase velocities and polarization vectors
 - Reflection and transmission coefficients
 
+<img src="images/animatied_slowness.gif" width="400"/>
+
 ## Roadmap
 
 - [ ] Group Velocities
