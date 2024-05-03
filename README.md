@@ -94,16 +94,17 @@ _Mathematica >13.1_
 
 - Rotation and translation transformations for tilt
 - Christoffel tensor and calculations
-- Phase velocities and polarization vectors:scream::
+- Phase velocities and slowness surfaces:scream::
 <img src="images/animated_velocity.gif" width="400"/>
 
+<img src="images/slowness_surface_1.png" width="400"/>
 <img src="images/animated_velocity2.gif" width="400"/>
+<img src="images/slowness_surface_2.png" width="400"/>
 - Reflection and transmission coefficients
 
 ## Roadmap
 
 - [ ] Group Velocities
-- [ ] Slowness Surfaces
 - [ ] Ray tracing
 - [ ] NMO analysis
 
