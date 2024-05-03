@@ -50,7 +50,6 @@ _Mathematica >13.1_
     0 & 0 & 0 & \text{c}_{44} & \text{c}_{54} & 0 \\
     0 & 0 & 0 & \text{c}_{54} & \text{c}_{55} & 0 \\
     \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & 0 & 0 & \text{c}_{66} \end{bmatrix}
-
     ```
 
   - Orthotropic:
@@ -64,7 +63,6 @@ _Mathematica >13.1_
     0 & 0 & 0 & 0 & \text{c}_{55} & 0 \\
     0 & 0 & 0 & 0 & 0 & \text{c}_{66} 
     \end{bmatrix}
-
     ```
 
   - Transversely isotropic:
@@ -79,22 +77,20 @@ _Mathematica >13.1_
     0 & 0 & 0 & 0 & \text{c}_{55} & 0 \\
     0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
     \end{bmatrix}
-
     ```
 
   - Isotropic:
 
     ```math  
-        \begin{bmatrix}
-        \text{c}_{11} & \text{c}_{12} & \text{c}_{12} & 0 & 0 & 0 \\
-        \text{c}_{12} & \text{c}_{11} & \text{c}_{12} & 0 & 0 & 0 \\
-        \text{c}_{12} & \text{c}_{12} & \text{c}_{11} & 0 & 0 & 0 \\
-        0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 & 0 \\
-        0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 \\
-        0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
-        \end{bmatrix}
-
-        ```
+    \begin{bmatrix}
+    \text{c}_{11} & \text{c}_{12} & \text{c}_{12} & 0 & 0 & 0 \\
+    \text{c}_{12} & \text{c}_{11} & \text{c}_{12} & 0 & 0 & 0 \\
+    \text{c}_{12} & \text{c}_{12} & \text{c}_{11} & 0 & 0 & 0 \\
+    0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 & 0 \\
+    0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 \\
+    0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
+    \end{bmatrix}
+    ```
 
 - Rotation and translation transformations for tilt
 - Christoffel tensor and calculations
