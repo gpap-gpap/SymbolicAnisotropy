@@ -147,77 +147,9 @@ saBondMatrix[a_] :=
                     strangeDet[i_, j_] := {{{Mod[i + 1, 3], Mod[j + 1,
                          3]}, {Mod[i + 2, 3], Mod[j + 2, 3]}}, {{Mod[i + 2, 3], Mod[j + 1, 3]
                         }, {Mod[i + 1, 3], Mod[j + 2, 3]}}} /. (0 -> 3);
-                    {
-                        {
-                            mat^2(*upper left hand block - square of 3x3 matrix
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                *),
-                            2 RotateLeft /@ mat RotateRight /@ mat(*upper right hand block - 2x product of complementary rows
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                *)
-                        }
-                        ,
-                        {
-                            RotateLeft @ mat RotateRight @ mat (*lower left hand block - product of complementary columns
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                *) ,
-                            Array[Plus @@ Times @@@ Apply[symbol, strangeDet[
-                                ##], {2}]&, {3, 3}](*lower right hand block - weird vector product of submatrices
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                *)
-                        }
-                    }
+                    {{mat^2, 2 RotateLeft /@ mat RotateRight /@ mat},
+                         {RotateLeft @ mat RotateRight @ mat, Array[Plus @@ Times @@@ Apply[symbol,
+                         strangeDet[##], {2}]&, {3, 3}]}}
                 ]
             ]
         ]
@@ -230,18 +162,6 @@ saReplace[symbol_] :=
              Global`b_] :> (symbol[Sequence @@ First @ Position[ip, Global`a], Sequence
              @@ First @ Position[ip, Global`b]])}
     ];
-
-(*saVoigtReplacementRule[symbol_] :=
-    With[{ip = voigtTable},
-        symbol[Global`a_, Global`b_, Global`c_, Global`d_] :> (symbol[
-            ip[[Global`a, Global`b]], ip[[Global`c, Global`d]]])
-    ];
-
-saTensorReplacementRule[symbol_] :=
-    With[{ip = voigtTable},
-        symbol[Global`a_, Global`b_] :> (symbol[Sequence @@ First @ Position[
-            ip, Global`a], Sequence @@ First @ Position[ip, Global`b]])
-    ];*)
 
 saReshape[matrix_List] /; Dimensions[matrix] === {6, 6} :=
     Module[{ip = voigtTable, table},
@@ -318,10 +238,6 @@ saThomsenParameters[symbol_, density_] :=
             ] + symbol[5, 5]) ^ 2 - (symbol[3, 3] - symbol[5, 5]) ^ 2) / (2 symbol[
             3, 3] (symbol[3, 3] - symbol[5, 5]))}
     ];
-
-(*Options[saPhaseVelocity] = {"Method" -> "Analytic"};
-saPhaseVelocity[head_,tensor_, unitslownes_ OptionsPattern[]] :=
-     OptionValue @ "Method" *)
 
 End[];
 
