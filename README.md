@@ -106,39 +106,39 @@ _Mathematica >13.1_
 
 ```math
 \begin{bmatrix}
-  \text{c}_{11} & \text{c}_{12} \cos ^2(\psi )+\text{c}_{13} \sin ^2(\psi ) & \text{c}_{12}
-    \sin ^2(\psi )+\text{c}_{13} \cos ^2(\psi ) & \text{c}_{12} \sin (\psi ) \cos (\psi
-    )-\text{c}_{13} \sin (\psi ) \cos (\psi ) & 0 & 0 \\
-  \text{c}_{12} \cos ^2(\psi )+\text{c}_{13} \sin ^2(\psi ) & \text{c}_{22} \cos ^4(\psi )+2
-    \text{c}_{23} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{33} \sin ^4(\psi )+4 \text{c}_{44}
-    \sin ^2(\psi ) \cos ^2(\psi ) & \text{c}_{22} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{23}
-    \sin ^4(\psi )+\text{c}_{23} \cos ^4(\psi )+\text{c}_{33} \sin ^2(\psi ) \cos ^2(\psi )-4
-    \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) & \text{c}_{22} \sin (\psi ) \cos ^3(\psi
-    )-\text{c}_{23} \sin (\psi ) \cos ^3(\psi )+\text{c}_{23} \sin ^3(\psi ) \cos (\psi
-    )-\text{c}_{33} \sin ^3(\psi ) \cos (\psi )-2 \text{c}_{44} \sin (\psi ) \cos ^3(\psi )+2
-    \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) & 0 & 0 \\
-  \text{c}_{12} \sin ^2(\psi )+\text{c}_{13} \cos ^2(\psi ) & \text{c}_{22} \sin ^2(\psi )
-    \cos ^2(\psi )+\text{c}_{23} \sin ^4(\psi )+\text{c}_{23} \cos ^4(\psi )+\text{c}_{33}
-    \sin ^2(\psi ) \cos ^2(\psi )-4 \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) &
-    \text{c}_{22} \sin ^4(\psi )+2 \text{c}_{23} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{33}
-    \cos ^4(\psi )+4 \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) & \text{c}_{22} \sin ^3(\psi
-    ) \cos (\psi )+\text{c}_{23} \sin (\psi ) \cos ^3(\psi )-\text{c}_{23} \sin ^3(\psi ) \cos
-    (\psi )-\text{c}_{33} \sin (\psi ) \cos ^3(\psi )+2 \text{c}_{44} \sin (\psi ) \cos
-    ^3(\psi )-2 \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) & 0 & 0 \\
-  \text{c}_{12} \sin (\psi ) \cos (\psi )-\text{c}_{13} \sin (\psi ) \cos (\psi ) &
-    \text{c}_{22} \sin (\psi ) \cos ^3(\psi )-\text{c}_{23} \sin (\psi ) \cos ^3(\psi
-    )+\text{c}_{23} \sin ^3(\psi ) \cos (\psi )-\text{c}_{33} \sin ^3(\psi ) \cos (\psi )-2
-    \text{c}_{44} \sin (\psi ) \cos ^3(\psi )+2 \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) &
-    \text{c}_{22} \sin ^3(\psi ) \cos (\psi )+\text{c}_{23} \sin (\psi ) \cos ^3(\psi
-    )-\text{c}_{23} \sin ^3(\psi ) \cos (\psi )-\text{c}_{33} \sin (\psi ) \cos ^3(\psi )+2
-    \text{c}_{44} \sin (\psi ) \cos ^3(\psi )-2 \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) &
-    \text{c}_{22} \sin ^2(\psi ) \cos ^2(\psi )-2 \text{c}_{23} \sin ^2(\psi ) \cos ^2(\psi
-    )+\text{c}_{33} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{44} \sin ^4(\psi )+\text{c}_{44}
-    \cos ^4(\psi )-2 \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) & 0 & 0 \\
-  0 & 0 & 0 & 0 & \text{c}_{55} \cos ^2(\psi )+\text{c}_{66} \sin ^2(\psi ) & \text{c}_{66}
-    \sin (\psi ) \cos (\psi )-\text{c}_{55} \sin (\psi ) \cos (\psi ) \\
-  0 & 0 & 0 & 0 & \text{c}_{66} \sin (\psi ) \cos (\psi )-\text{c}_{55} \sin (\psi ) \cos
-    (\psi ) & \text{c}_{55} \sin ^2(\psi )+\text{c}_{66} \cos ^2(\psi ) \\
+\text{c}_{11} & \text{c}_{12} \cos ^2(\psi )+\text{c}_{13} \sin ^2(\psi ) & \text{c}_{12}
+  \sin ^2(\psi )+\text{c}_{13} \cos ^2(\psi ) & \text{c}_{12} \sin (\psi ) \cos (\psi
+  )-\text{c}_{13} \sin (\psi ) \cos (\psi ) & 0 & 0 \\
+\text{c}_{12} \cos ^2(\psi )+\text{c}_{13} \sin ^2(\psi ) & \text{c}_{22} \cos ^4(\psi )+2
+  \text{c}_{23} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{33} \sin ^4(\psi )+4 \text{c}_{44}
+  \sin ^2(\psi ) \cos ^2(\psi ) & \text{c}_{22} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{23}
+  \sin ^4(\psi )+\text{c}_{23} \cos ^4(\psi )+\text{c}_{33} \sin ^2(\psi ) \cos ^2(\psi )-4
+  \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) & \text{c}_{22} \sin (\psi ) \cos ^3(\psi
+  )-\text{c}_{23} \sin (\psi ) \cos ^3(\psi )+\text{c}_{23} \sin ^3(\psi ) \cos (\psi
+  )-\text{c}_{33} \sin ^3(\psi ) \cos (\psi )-2 \text{c}_{44} \sin (\psi ) \cos ^3(\psi )+2
+  \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) & 0 & 0 \\
+\text{c}_{12} \sin ^2(\psi )+\text{c}_{13} \cos ^2(\psi ) & \text{c}_{22} \sin ^2(\psi )
+  \cos ^2(\psi )+\text{c}_{23} \sin ^4(\psi )+\text{c}_{23} \cos ^4(\psi )+\text{c}_{33}
+  \sin ^2(\psi ) \cos ^2(\psi )-4 \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) &
+  \text{c}_{22} \sin ^4(\psi )+2 \text{c}_{23} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{33}
+  \cos ^4(\psi )+4 \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) & \text{c}_{22} \sin ^3(\psi
+  ) \cos (\psi )+\text{c}_{23} \sin (\psi ) \cos ^3(\psi )-\text{c}_{23} \sin ^3(\psi ) \cos
+  (\psi )-\text{c}_{33} \sin (\psi ) \cos ^3(\psi )+2 \text{c}_{44} \sin (\psi ) \cos
+  ^3(\psi )-2 \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) & 0 & 0 \\
+\text{c}_{12} \sin (\psi ) \cos (\psi )-\text{c}_{13} \sin (\psi ) \cos (\psi ) &
+  \text{c}_{22} \sin (\psi ) \cos ^3(\psi )-\text{c}_{23} \sin (\psi ) \cos ^3(\psi
+  )+\text{c}_{23} \sin ^3(\psi ) \cos (\psi )-\text{c}_{33} \sin ^3(\psi ) \cos (\psi )-2
+  \text{c}_{44} \sin (\psi ) \cos ^3(\psi )+2 \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) &
+  \text{c}_{22} \sin ^3(\psi ) \cos (\psi )+\text{c}_{23} \sin (\psi ) \cos ^3(\psi
+  )-\text{c}_{23} \sin ^3(\psi ) \cos (\psi )-\text{c}_{33} \sin (\psi ) \cos ^3(\psi )+2
+  \text{c}_{44} \sin (\psi ) \cos ^3(\psi )-2 \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) &
+  \text{c}_{22} \sin ^2(\psi ) \cos ^2(\psi )-2 \text{c}_{23} \sin ^2(\psi ) \cos ^2(\psi
+  )+\text{c}_{33} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{44} \sin ^4(\psi )+\text{c}_{44}
+  \cos ^4(\psi )-2 \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) & 0 & 0 \\
+0 & 0 & 0 & 0 & \text{c}_{55} \cos ^2(\psi )+\text{c}_{66} \sin ^2(\psi ) & \text{c}_{66}
+  \sin (\psi ) \cos (\psi )-\text{c}_{55} \sin (\psi ) \cos (\psi ) \\
+0 & 0 & 0 & 0 & \text{c}_{66} \sin (\psi ) \cos (\psi )-\text{c}_{55} \sin (\psi ) \cos
+  (\psi ) & \text{c}_{55} \sin ^2(\psi )+\text{c}_{66} \cos ^2(\psi ) \\
 \end{bmatrix}
 ```
 
