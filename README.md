@@ -104,6 +104,7 @@ _Mathematica >13.1_
   ]
   ```
 
+```math
 $$\begin{bmatrix}
   \text{c}_{11} & \text{c}_{12} \cos ^2(\psi )+\text{c}_{13} \sin ^2(\psi ) & \text{c}_{12}
     \sin ^2(\psi )+\text{c}_{13} \cos ^2(\psi ) & \text{c}_{12} \sin (\psi ) \cos (\psi
@@ -139,6 +140,7 @@ $$\begin{bmatrix}
   0 & 0 & 0 & 0 & \text{c}_{66} \sin (\psi ) \cos (\psi )-\text{c}_{55} \sin (\psi ) \cos
     (\psi ) & \text{c}_{55} \sin ^2(\psi )+\text{c}_{66} \cos ^2(\psi ) \\
   \end{bmatrix}$$
+```
 
 - :rocket: Christoffel tensor and calculations
 - :rocket: Phase velocities and slowness surfaces :scream: :
