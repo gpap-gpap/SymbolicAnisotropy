@@ -93,56 +93,31 @@ _Mathematica >13.1_
     ```
   
 - :rocket: Rotation and translation transformations for tilt
+For example, tilt an orthorhombic tensor by an angle $\psi$ around the x-axis:
 
   ```Mathematica
   Block[{\[Psi], c},
-    With[{tensor =
-      saCreateElasticityTensor[c, "Symmetry" -> "Orthotropic"],
-      transform = saRotationTransformation[\[Psi], {1, 0, 0}]},
-    (saContract[transform, tensor] // saConvert[c, #] &) /. saHumanReadable[c]
+  With[{
+    tensor = saCreateElasticityTensor[c, "Symmetry" -> "Orthotropic"],
+    transform = saRotationTransformation[\[Psi], {1, 0, 0}]},
+      (saContract[transform, tensor] // saConvert[c, #] &) /. saHumanReadable[c]
     ]
   ]
   ```
 
-```math
-\begin{bmatrix}
-\text{c}_{11} & \text{c}_{12} \cos ^2(\psi )+\text{c}_{13} \sin ^2(\psi ) & \text{c}_{12}
-  \sin ^2(\psi )+\text{c}_{13} \cos ^2(\psi ) & \text{c}_{12} \sin (\psi ) \cos (\psi
-  )-\text{c}_{13} \sin (\psi ) \cos (\psi ) & 0 & 0 \\
-\text{c}_{12} \cos ^2(\psi )+\text{c}_{13} \sin ^2(\psi ) & \text{c}_{22} \cos ^4(\psi )+2
-  \text{c}_{23} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{33} \sin ^4(\psi )+4 \text{c}_{44}
-  \sin ^2(\psi ) \cos ^2(\psi ) & \text{c}_{22} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{23}
-  \sin ^4(\psi )+\text{c}_{23} \cos ^4(\psi )+\text{c}_{33} \sin ^2(\psi ) \cos ^2(\psi )-4
-  \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) & \text{c}_{22} \sin (\psi ) \cos ^3(\psi
-  )-\text{c}_{23} \sin (\psi ) \cos ^3(\psi )+\text{c}_{23} \sin ^3(\psi ) \cos (\psi
-  )-\text{c}_{33} \sin ^3(\psi ) \cos (\psi )-2 \text{c}_{44} \sin (\psi ) \cos ^3(\psi )+2
-  \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) & 0 & 0 \\
-\text{c}_{12} \sin ^2(\psi )+\text{c}_{13} \cos ^2(\psi ) & \text{c}_{22} \sin ^2(\psi )
-  \cos ^2(\psi )+\text{c}_{23} \sin ^4(\psi )+\text{c}_{23} \cos ^4(\psi )+\text{c}_{33}
-  \sin ^2(\psi ) \cos ^2(\psi )-4 \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) &
-  \text{c}_{22} \sin ^4(\psi )+2 \text{c}_{23} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{33}
-  \cos ^4(\psi )+4 \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) & \text{c}_{22} \sin ^3(\psi
-  ) \cos (\psi )+\text{c}_{23} \sin (\psi ) \cos ^3(\psi )-\text{c}_{23} \sin ^3(\psi ) \cos
-  (\psi )-\text{c}_{33} \sin (\psi ) \cos ^3(\psi )+2 \text{c}_{44} \sin (\psi ) \cos
-  ^3(\psi )-2 \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) & 0 & 0 \\
-\text{c}_{12} \sin (\psi ) \cos (\psi )-\text{c}_{13} \sin (\psi ) \cos (\psi ) &
-  \text{c}_{22} \sin (\psi ) \cos ^3(\psi )-\text{c}_{23} \sin (\psi ) \cos ^3(\psi
-  )+\text{c}_{23} \sin ^3(\psi ) \cos (\psi )-\text{c}_{33} \sin ^3(\psi ) \cos (\psi )-2
-  \text{c}_{44} \sin (\psi ) \cos ^3(\psi )+2 \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) &
-  \text{c}_{22} \sin ^3(\psi ) \cos (\psi )+\text{c}_{23} \sin (\psi ) \cos ^3(\psi
-  )-\text{c}_{23} \sin ^3(\psi ) \cos (\psi )-\text{c}_{33} \sin (\psi ) \cos ^3(\psi )+2
-  \text{c}_{44} \sin (\psi ) \cos ^3(\psi )-2 \text{c}_{44} \sin ^3(\psi ) \cos (\psi ) &
-  \text{c}_{22} \sin ^2(\psi ) \cos ^2(\psi )-2 \text{c}_{23} \sin ^2(\psi ) \cos ^2(\psi
-  )+\text{c}_{33} \sin ^2(\psi ) \cos ^2(\psi )+\text{c}_{44} \sin ^4(\psi )+\text{c}_{44}
-  \cos ^4(\psi )-2 \text{c}_{44} \sin ^2(\psi ) \cos ^2(\psi ) & 0 & 0 \\
-0 & 0 & 0 & 0 & \text{c}_{55} \cos ^2(\psi )+\text{c}_{66} \sin ^2(\psi ) & \text{c}_{66}
-  \sin (\psi ) \cos (\psi )-\text{c}_{55} \sin (\psi ) \cos (\psi ) \\
-0 & 0 & 0 & 0 & \text{c}_{66} \sin (\psi ) \cos (\psi )-\text{c}_{55} \sin (\psi ) \cos
-  (\psi ) & \text{c}_{55} \sin ^2(\psi )+\text{c}_{66} \cos ^2(\psi ) \\
-\end{bmatrix}
-```
-
 - :rocket: Christoffel tensor and calculations
+For example, what is the Christoffel tensor for a transversely isotropic medium with symmetry axis along the x-axis?
+  
+    ```Mathematica
+    Block[{c},
+    With[{
+      tensor = saCreateElasticityTensor[c, "Symmetry" -> "TransverselyIsotropic"],
+      transform = saRotationTransformation[\[Pi]/2, {0, 1, 0}]},
+        saChristoffel[tensor, transform] // saConvert[c, #] &
+      ]
+    ]
+    ```
+
 - :rocket: Phase velocities and slowness surfaces :scream: :
 <img src="images/slowness_surface_1.png" width="400"/>
 
