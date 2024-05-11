@@ -66,7 +66,7 @@ _Mathematica >13.1_
 
 - Transversely isotropic:
 
-  ```math  
+```math  
   \begin{bmatrix}
   \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & 0 & 0 & 0 \\
 
@@ -76,11 +76,11 @@ _Mathematica >13.1_
   0 & 0 & 0 & 0 & \text{c}_{55} & 0 \\
   0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
   \end{bmatrix}
-  ```
+```
 
 - Isotropic:
 
-  ```math  
+```math  
   \begin{bmatrix}
   \text{c}_{11} & \text{c}_{12} & \text{c}_{12} & 0 & 0 & 0 \\
   \text{c}_{12} & \text{c}_{11} & \text{c}_{12} & 0 & 0 & 0 \\
@@ -89,7 +89,7 @@ _Mathematica >13.1_
   0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 \\
   0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
   \end{bmatrix}
-  ```
+```
   
 - :rocket: Rotation and translation transformations for tilt
 For example, tilt an orthorhombic tensor by an angle $\psi$ around the x-axis:
