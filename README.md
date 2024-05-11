@@ -122,13 +122,15 @@ For example, what is the Christoffel tensor for a transversely isotropic medium 
 <img src="images/slowness_surface_1.png" width="400"/>
 
 <img src="images/slowness_surface_2.png" width="400"/>
-- Reflection and transmission coefficients
+- :rocket: Reflection and transmission coefficients
 
 ## Roadmap
 
 - [ ] Group Velocities
 - [ ] Ray tracing
 - [ ] NMO analysis
+- [ ] Eshelby inclusions
+- [ ] implement Cowin, S. C., & Mehrabadi, M. M.
 
 ## Maintenance and feedback
 
@@ -137,10 +139,10 @@ For example, what is the Christoffel tensor for a transversely isotropic medium 
 ## References
 
 1. Musgrave, M. J. P. (1970). _Crystal acoustics: Introduction to the study of elastic waves and vibrations in crystals_. Holden-Day, San Francisco
-
 2. Nye, J. F. (1985). Physical properties of crystals: their representation by tensors and matrices. Oxford university press.
 3. Tsvankin, I. (2012). _Seismic signatures and analysis of reflection data in anisotropic media_. Society of Exploration Geophysicists.
 4. _Structural mechanics MIT lecture notes_, <https://web.mit.edu/16.20/homepage/>
 5. Helbig, K. (2015). _Foundations of Anisotropy for Exploration Seismics: Section I. Seismic Exploration_. Elsevier.
+6. Cowin, S. C., & Mehrabadi, M. M. (1987). On the identification of material symmetry for anisotropic elastic materials. The Quarterly Journal of Mechanics and Applied Mathematics, 40(4), 451-476.
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
