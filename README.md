@@ -17,7 +17,7 @@ _Mathematica >13.1_
 
 ## Features
 
-### Elastic tensors of arbitrary symmetry:rocket:
+### Elastic tensors of arbitrary symmetry :rocket:
 
 `saCreateElasticityTensor[c  , "Symmetry" -> sym]` where `c` is the tensor label and `sym` is the symmetry of the tensor. The following symmetries are supported:
 Triclinic:
@@ -92,7 +92,7 @@ Isotropic:
   \end{bmatrix}
 ```
   
-### Rotation and translation transformations for tilt:rocket:
+### Rotation and translation transformations for tilt :rocket:
 
 For example, tilt an orthorhombic tensor by an angle $\psi$ around the x-axis:
 
@@ -106,7 +106,7 @@ For example, tilt an orthorhombic tensor by an angle $\psi$ around the x-axis:
   ]
   ```
 
-### Christoffel tensor and calculations:rocket:
+### Christoffel tensor and calculations :rocket:
 
 For example, what is the Christoffel tensor for a transversely isotropic medium with symmetry axis along the x-axis?
   
@@ -120,7 +120,7 @@ For example, what is the Christoffel tensor for a transversely isotropic medium 
   ]
   ```
 
-### Phase velocities and slowness surfaces:rocket:
+### Phase velocities and slowness surfaces :rocket:
 
 ![slowness surface of a highly anisotropic medium](images/slowness_surface_1.png)
 
