@@ -21,76 +21,75 @@ _Mathematica >13.1_
 `saCreateElasticityTensor[c  , "Symmetry" -> sym]` where `c` is the tensor label and `sym` is the symmetry of the tensor. The following symmetries are supported:
   - Triclinic:
 
-  ```math
+```math
+  \begin{bmatrix}
+      \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & \text{c}_{14} & \text{c}_{15} &
+  \text{c}_{16} \\
 
-    \begin{bmatrix}
-        \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & \text{c}_{14} & \text{c}_{15} &
-    \text{c}_{16} \\
+  \text{c}_{12} & \text{c}_{22} & \text{c}_{23} & \text{c}_{24} & \text{c}_{52} &
+  \text{c}_{62} \\
+  \text{c}_{13} & \text{c}_{23} & \text{c}_{33} & \text{c}_{43} & \text{c}_{53} &
+  \text{c}_{63} \\
+  \text{c}_{14} & \text{c}_{24} & \text{c}_{43} & \text{c}_{44} & \text{c}_{54} &
+  \text{c}_{64} \\
+  \text{c}_{15} & \text{c}_{52} & \text{c}_{53} & \text{c}_{54} & \text{c}_{55} &
+  \text{c}_{65} \\
+  \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & \text{c}_{64} & \text{c}_{65} &
+  \text{c}_{66}
+  \end{bmatrix}
+  ```
 
-    \text{c}_{12} & \text{c}_{22} & \text{c}_{23} & \text{c}_{24} & \text{c}_{52} &
-    \text{c}_{62} \\
-    \text{c}_{13} & \text{c}_{23} & \text{c}_{33} & \text{c}_{43} & \text{c}_{53} &
-    \text{c}_{63} \\
-    \text{c}_{14} & \text{c}_{24} & \text{c}_{43} & \text{c}_{44} & \text{c}_{54} &
-    \text{c}_{64} \\
-    \text{c}_{15} & \text{c}_{52} & \text{c}_{53} & \text{c}_{54} & \text{c}_{55} &
-    \text{c}_{65} \\
-    \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & \text{c}_{64} & \text{c}_{65} &
-    \text{c}_{66}
-    \end{bmatrix}
-    ```
+- Monoclinic:
 
-  - Monoclinic:
+```math  
+  \begin{bmatrix}
+  \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & 0 & 0 & \text{c}_{16} \\
+  \text{c}_{12} & \text{c}_{22} & \text{c}_{23} & 0 & 0 & \text{c}_{62} \\
+  \text{c}_{13} & \text{c}_{23} & \text{c}_{33} & 0 & 0 & \text{c}_{63} \\
+  0 & 0 & 0 & \text{c}_{44} & \text{c}_{54} & 0 \\
+  0 & 0 & 0 & \text{c}_{54} & \text{c}_{55} & 0 \\
+  \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & 0 & 0 & \text{c}_{66} \end{bmatrix}
+  ```
 
-  ```math  
-    \begin{bmatrix}
-    \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & 0 & 0 & \text{c}_{16} \\
-    \text{c}_{12} & \text{c}_{22} & \text{c}_{23} & 0 & 0 & \text{c}_{62} \\
-    \text{c}_{13} & \text{c}_{23} & \text{c}_{33} & 0 & 0 & \text{c}_{63} \\
-    0 & 0 & 0 & \text{c}_{44} & \text{c}_{54} & 0 \\
-    0 & 0 & 0 & \text{c}_{54} & \text{c}_{55} & 0 \\
-    \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & 0 & 0 & \text{c}_{66} \end{bmatrix}
-    ```
+- Orthotropic:
 
-  - Orthotropic:
-
-  ```math  
-    \begin{bmatrix}
-     \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & 0 & 0 & 0 \\
-    \text{c}_{12} & \text{c}_{22} & \text{c}_{23} & 0 & 0 & 0 \\
-    \text{c}_{13} & \text{c}_{23} & \text{c}_{33} & 0 & 0 & 0 \\
-    0 & 0 & 0 & \text{c}_{44} & 0 & 0 \\
-    0 & 0 & 0 & 0 & \text{c}_{55} & 0 \\
-    0 & 0 & 0 & 0 & 0 & \text{c}_{66} 
-    \end{bmatrix}
-    ```
-
-  - Transversely isotropic:
-
-    ```math  
-    \begin{bmatrix}
+```math  
+  \begin{bmatrix}
     \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & 0 & 0 & 0 \\
+  \text{c}_{12} & \text{c}_{22} & \text{c}_{23} & 0 & 0 & 0 \\
+  \text{c}_{13} & \text{c}_{23} & \text{c}_{33} & 0 & 0 & 0 \\
+  0 & 0 & 0 & \text{c}_{44} & 0 & 0 \\
+  0 & 0 & 0 & 0 & \text{c}_{55} & 0 \\
+  0 & 0 & 0 & 0 & 0 & \text{c}_{66} 
+  \end{bmatrix}
+  ```
 
-    \text{c}_{12} & \text{c}_{11} & \text{c}_{13} & 0 & 0 & 0 \\
-    \text{c}_{13} & \text{c}_{13} & \text{c}_{33} & 0 & 0 & 0 \\
-    0 & 0 & 0 & \text{c}_{55} & 0 & 0 \\
-    0 & 0 & 0 & 0 & \text{c}_{55} & 0 \\
-    0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
-    \end{bmatrix}
-    ```
+- Transversely isotropic:
 
-  - Isotropic:
+  ```math  
+  \begin{bmatrix}
+  \text{c}_{11} & \text{c}_{12} & \text{c}_{13} & 0 & 0 & 0 \\
 
-    ```math  
-    \begin{bmatrix}
-    \text{c}_{11} & \text{c}_{12} & \text{c}_{12} & 0 & 0 & 0 \\
-    \text{c}_{12} & \text{c}_{11} & \text{c}_{12} & 0 & 0 & 0 \\
-    \text{c}_{12} & \text{c}_{12} & \text{c}_{11} & 0 & 0 & 0 \\
-    0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 & 0 \\
-    0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 \\
-    0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
-    \end{bmatrix}
-    ```
+  \text{c}_{12} & \text{c}_{11} & \text{c}_{13} & 0 & 0 & 0 \\
+  \text{c}_{13} & \text{c}_{13} & \text{c}_{33} & 0 & 0 & 0 \\
+  0 & 0 & 0 & \text{c}_{55} & 0 & 0 \\
+  0 & 0 & 0 & 0 & \text{c}_{55} & 0 \\
+  0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
+  \end{bmatrix}
+  ```
+
+- Isotropic:
+
+  ```math  
+  \begin{bmatrix}
+  \text{c}_{11} & \text{c}_{12} & \text{c}_{12} & 0 & 0 & 0 \\
+  \text{c}_{12} & \text{c}_{11} & \text{c}_{12} & 0 & 0 & 0 \\
+  \text{c}_{12} & \text{c}_{12} & \text{c}_{11} & 0 & 0 & 0 \\
+  0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 & 0 \\
+  0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} & 0 \\
+  0 & 0 & 0 & 0 & 0 & \frac{\text{c}_{11}}{2}-\frac{\text{c}_{12}}{2} 
+  \end{bmatrix}
+  ```
   
 - :rocket: Rotation and translation transformations for tilt
 For example, tilt an orthorhombic tensor by an angle $\psi$ around the x-axis:
