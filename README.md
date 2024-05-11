@@ -17,9 +17,10 @@ _Mathematica >13.1_
 
 ## Features
 
-- :rocket: Elastic tensors of arbitrary symmetry:
+### Elastic tensors of arbitrary symmetry:rocket:
+
 `saCreateElasticityTensor[c  , "Symmetry" -> sym]` where `c` is the tensor label and `sym` is the symmetry of the tensor. The following symmetries are supported:
-  - Triclinic:
+Triclinic:
 
 ```math
   \begin{bmatrix}
@@ -39,7 +40,7 @@ _Mathematica >13.1_
   \end{bmatrix}
   ```
 
-- Monoclinic:
+Monoclinic:
 
 ```math  
   \begin{bmatrix}
@@ -51,7 +52,7 @@ _Mathematica >13.1_
   \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & 0 & 0 & \text{c}_{66} \end{bmatrix}
   ```
 
-- Orthotropic:
+Orthotropic:
 
 ```math  
   \begin{bmatrix}
@@ -64,7 +65,7 @@ _Mathematica >13.1_
   \end{bmatrix}
   ```
 
-- Transversely isotropic:
+Transversely isotropic:
 
 ```math  
   \begin{bmatrix}
@@ -78,7 +79,7 @@ _Mathematica >13.1_
   \end{bmatrix}
 ```
 
-- Isotropic:
+Isotropic:
 
 ```math  
   \begin{bmatrix}
@@ -91,7 +92,8 @@ _Mathematica >13.1_
   \end{bmatrix}
 ```
   
-- :rocket: Rotation and translation transformations for tilt
+### Rotation and translation transformations for tilt:rocket:
+
 For example, tilt an orthorhombic tensor by an angle $\psi$ around the x-axis:
 
   ```Mathematica
@@ -104,20 +106,21 @@ For example, tilt an orthorhombic tensor by an angle $\psi$ around the x-axis:
   ]
   ```
 
-- :rocket: Christoffel tensor and calculations
+### Christoffel tensor and calculations:rocket:
+
 For example, what is the Christoffel tensor for a transversely isotropic medium with symmetry axis along the x-axis?
   
-    ```Mathematica
-    Block[{c},
-    With[{
-      tensor = saCreateElasticityTensor[c, "Symmetry" -> "TransverselyIsotropic"],
-      transform = saRotationTransformation[\[Pi]/2, {0, 1, 0}]},
-        saChristoffel[tensor, transform] // saConvert[c, #] &
-      ]
+  ```Mathematica
+  Block[{c},
+  With[{
+    tensor = saCreateElasticityTensor[c, "Symmetry" -> "TransverselyIsotropic"],
+    transform = saRotationTransformation[\[Pi]/2, {0, 1, 0}]},
+      saChristoffel[tensor, transform] // saConvert[c, #] &
     ]
-    ```
+  ]
+  ```
 
-- Phase velocities and slowness surfaces :rocket:
+### Phase velocities and slowness surfaces:rocket:
 
 ![slowness surface of a highly anisotropic medium](images/slowness_surface_1.png)
 
