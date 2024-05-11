@@ -123,6 +123,8 @@ For example, what is the Christoffel tensor for a transversely isotropic medium 
 
 ![slowness surface of a moderately anisotropic medium](images/slowness_surface_2.png)
 
+For further examples check out the (constantly updated)  [examples notebook](SymbolicAnisotropyUsage.nb)
+
 ## Roadmap
 
 - [ ] Group Velocities
