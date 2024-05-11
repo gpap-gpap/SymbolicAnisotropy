@@ -118,11 +118,12 @@ For example, what is the Christoffel tensor for a transversely isotropic medium 
     ]
     ```
 
-- :rocket: Phase velocities and slowness surfaces :scream: :
-<img src="images/slowness_surface_1.png" width="400"/>
+- Phase velocities and slowness surfaces :rocket:
 
-<img src="images/slowness_surface_2.png" width="400"/>
-- :rocket: Reflection and transmission coefficients
+<img src="images/slowness_surface_1.png" width="400" alt-text="slowness surface of a highly anisotropic medium"/>
+
+<img src="images/slowness_surface_2.png" width="400" alt-text="slowness surface of a moderately anisotropic medium"/>
+- Reflection and transmission coefficients :rocket:
 
 ## Roadmap
 
