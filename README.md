@@ -20,7 +20,8 @@ _Mathematica >13.1_
 ### Elastic tensors of arbitrary symmetry :rocket:
 
 `saCreateElasticityTensor[c  , "Symmetry" -> sym]` where `c` is the tensor label and `sym` is the symmetry of the tensor. The following symmetries are supported:
-Triclinic:
+
+`Triclinic`:
 
 ```math
   \begin{bmatrix}
@@ -40,7 +41,7 @@ Triclinic:
   \end{bmatrix}
   ```
 
-Monoclinic:
+`Monoclinic`:
 
 ```math  
   \begin{bmatrix}
@@ -52,7 +53,7 @@ Monoclinic:
   \text{c}_{16} & \text{c}_{62} & \text{c}_{63} & 0 & 0 & \text{c}_{66} \end{bmatrix}
   ```
 
-Orthotropic:
+`Orthotropic`:
 
 ```math  
   \begin{bmatrix}
@@ -65,7 +66,7 @@ Orthotropic:
   \end{bmatrix}
   ```
 
-Transversely isotropic:
+`Transversely isotropic`:
 
 ```math  
   \begin{bmatrix}
@@ -79,7 +80,7 @@ Transversely isotropic:
   \end{bmatrix}
 ```
 
-Isotropic:
+`Isotropic`:
 
 ```math  
   \begin{bmatrix}
