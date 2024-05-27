@@ -66,7 +66,7 @@ _Mathematica >13.1_
   \end{bmatrix}
   ```
 
-`Transversely isotropic`:
+`Transversely Isotropic`:
 
 ```math  
   \begin{bmatrix}
