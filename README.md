@@ -139,7 +139,7 @@ For further examples check out the (constantly updated)  [examples notebook](Sym
 
 ## Maintenance and feedback
 
-<giorgos.papageorgiou@ed.ac.uk>
+<gpap+github@mantis-geophysics.com>
 
 ## References
 
